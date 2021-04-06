@@ -1,0 +1,1752 @@
+{
+  "took": 6,
+  "responses": [
+    {
+      "took": 6,
+      "timed_out": false,
+      "_shards": {
+        "total": 6,
+        "successful": 6,
+        "skipped": 0,
+        "failed": 0
+      },
+      "hits": {
+        "total": {
+          "value": 10,
+          "relation": "eq"
+        },
+        "max_score": null,
+        "hits": []
+      },
+      "aggregations": {
+        "0": {
+          "buckets": [
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "1": {
+                        "value": 6433961
+                      },
+                      "key": "genie",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 2256277
+                      },
+                      "key": "Other",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 957683
+                      },
+                      "key": "Android",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 307338
+                      },
+                      "key": "IE",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 273718
+                      },
+                      "key": "Chrome",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 218068
+                      },
+                      "key": "Mobile Safari UI/WKWebView",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 69013
+                      },
+                      "key": "Chrome Mobile WebView",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 58132
+                      },
+                      "key": "idolchamp",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 49866
+                      },
+                      "key": "Mobile Safari",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 33764
+                      },
+                      "key": "Crosswalk",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 30647
+                      },
+                      "key": "Whale",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 24897
+                      },
+                      "key": "Safari",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 15054
+                      },
+                      "key": "Chrome Mobile",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 12354
+                      },
+                      "key": "Apple Mail",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 9484
+                      },
+                      "key": "Firefox",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 9183
+                      },
+                      "key": "okhttp",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 5738
+                      },
+                      "key": "genieWidget",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 4962
+                      },
+                      "key": "HeadlessChrome",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 3599
+                      },
+                      "key": "Chrome Mobile iOS",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 2834
+                      },
+                      "key": "what",
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "doc_count": 20
+              },
+              "key_as_string": "1617548400000",
+              "key": 1617548400000,
+              "doc_count": 1
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "1": {
+                        "value": 4692877
+                      },
+                      "key": "genie",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 1588518
+                      },
+                      "key": "Other",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 871211
+                      },
+                      "key": "Android",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 175488
+                      },
+                      "key": "Chrome",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 156747
+                      },
+                      "key": "IE",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 41450
+                      },
+                      "key": "Chrome Mobile WebView",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 39130
+                      },
+                      "key": "idolchamp",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 37538
+                      },
+                      "key": "Mobile Safari",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 33085
+                      },
+                      "key": "Mobile Safari UI/WKWebView",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 27136
+                      },
+                      "key": "Crosswalk",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 18647
+                      },
+                      "key": "Whale",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 14531
+                      },
+                      "key": "Chrome Mobile",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 12318
+                      },
+                      "key": "Safari",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 8232
+                      },
+                      "key": "Apple Mail",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 6756
+                      },
+                      "key": "okhttp",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 6418
+                      },
+                      "key": "Firefox",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 5073
+                      },
+                      "key": "genieWidget",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 3054
+                      },
+                      "key": "Chrome Mobile iOS",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 2662
+                      },
+                      "key": "what",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 1809
+                      },
+                      "key": "Googlebot-Image",
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "doc_count": 20
+              },
+              "key_as_string": "1617552000000",
+              "key": 1617552000000,
+              "doc_count": 1
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "1": {
+                        "value": 3126514
+                      },
+                      "key": "genie",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 1149053
+                      },
+                      "key": "Other",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 870123
+                      },
+                      "key": "Android",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 110184
+                      },
+                      "key": "Chrome",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 104389
+                      },
+                      "key": "IE",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 23787
+                      },
+                      "key": "Chrome Mobile WebView",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 23379
+                      },
+                      "key": "Mobile Safari",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 22474
+                      },
+                      "key": "idolchamp",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 13521
+                      },
+                      "key": "Crosswalk",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 13350
+                      },
+                      "key": "Whale",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 10186
+                      },
+                      "key": "Mobile Safari UI/WKWebView",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 8557
+                      },
+                      "key": "Safari",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 7770
+                      },
+                      "key": "Chrome Mobile",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 5617
+                      },
+                      "key": "Apple Mail",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 4329
+                      },
+                      "key": "Firefox",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 3905
+                      },
+                      "key": "okhttp",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 3747
+                      },
+                      "key": "Googlebot-Image",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 1829
+                      },
+                      "key": "Chrome Mobile iOS",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 1498
+                      },
+                      "key": "what",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 1356
+                      },
+                      "key": "genieWidget",
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "doc_count": 20
+              },
+              "key_as_string": "1617555600000",
+              "key": 1617555600000,
+              "doc_count": 1
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "1": {
+                        "value": 2012388
+                      },
+                      "key": "genie",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 838500
+                      },
+                      "key": "Android",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 837843
+                      },
+                      "key": "Other",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 73530
+                      },
+                      "key": "Chrome",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 58617
+                      },
+                      "key": "IE",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 17533
+                      },
+                      "key": "idolchamp",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 15489
+                      },
+                      "key": "Whale",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 14515
+                      },
+                      "key": "Chrome Mobile WebView",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 12983
+                      },
+                      "key": "Mobile Safari",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 8004
+                      },
+                      "key": "Crosswalk",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 5965
+                      },
+                      "key": "Chrome Mobile",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 5863
+                      },
+                      "key": "Mobile Safari UI/WKWebView",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 4893
+                      },
+                      "key": "Safari",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 3328
+                      },
+                      "key": "okhttp",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 3175
+                      },
+                      "key": "Apple Mail",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 2340
+                      },
+                      "key": "Googlebot-Image",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 1334
+                      },
+                      "key": "what",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 1309
+                      },
+                      "key": "Firefox",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 1089
+                      },
+                      "key": "sample",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 1030
+                      },
+                      "key": "Yeti",
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "doc_count": 20
+              },
+              "key_as_string": "1617559200000",
+              "key": 1617559200000,
+              "doc_count": 1
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "1": {
+                        "value": 1311636
+                      },
+                      "key": "genie",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 826375
+                      },
+                      "key": "Android",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 799977
+                      },
+                      "key": "Other",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 56966
+                      },
+                      "key": "Chrome",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 41319
+                      },
+                      "key": "IE",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 16417
+                      },
+                      "key": "idolchamp",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 12022
+                      },
+                      "key": "Chrome Mobile WebView",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 8030
+                      },
+                      "key": "Mobile Safari",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 7038
+                      },
+                      "key": "Crosswalk",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 4640
+                      },
+                      "key": "Whale",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 4534
+                      },
+                      "key": "Safari",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 3731
+                      },
+                      "key": "Mobile Safari UI/WKWebView",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 3591
+                      },
+                      "key": "Chrome Mobile",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 2278
+                      },
+                      "key": "Apple Mail",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 2246
+                      },
+                      "key": "Googlebot-Image",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 1864
+                      },
+                      "key": "okhttp",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 1041
+                      },
+                      "key": "Edge",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 1022
+                      },
+                      "key": "Opera",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 913
+                      },
+                      "key": "Yeti",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 820
+                      },
+                      "key": "Firefox",
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "doc_count": 20
+              },
+              "key_as_string": "1617562800000",
+              "key": 1617562800000,
+              "doc_count": 1
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "1": {
+                        "value": 1428286
+                      },
+                      "key": "genie",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 939108
+                      },
+                      "key": "Other",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 828560
+                      },
+                      "key": "Android",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 59045
+                      },
+                      "key": "IE",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 50479
+                      },
+                      "key": "Chrome",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 15208
+                      },
+                      "key": "Chrome Mobile WebView",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 12832
+                      },
+                      "key": "idolchamp",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 7758
+                      },
+                      "key": "Mobile Safari",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 6403
+                      },
+                      "key": "Crosswalk",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 4089
+                      },
+                      "key": "Mobile Safari UI/WKWebView",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 3967
+                      },
+                      "key": "Whale",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 3788
+                      },
+                      "key": "Chrome Mobile",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 3693
+                      },
+                      "key": "Firefox",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 2956
+                      },
+                      "key": "Safari",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 1827
+                      },
+                      "key": "okhttp",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 1321
+                      },
+                      "key": "Apple Mail",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 1056
+                      },
+                      "key": "Googlebot-Image",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 867
+                      },
+                      "key": "Yeti",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 832
+                      },
+                      "key": "Opera",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 578
+                      },
+                      "key": "genieWidget",
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "doc_count": 20
+              },
+              "key_as_string": "1617566400000",
+              "key": 1617566400000,
+              "doc_count": 1
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "1": {
+                        "value": 3596918
+                      },
+                      "key": "genie",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 1712787
+                      },
+                      "key": "Other",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 923584
+                      },
+                      "key": "Android",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 86885
+                      },
+                      "key": "IE",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 73988
+                      },
+                      "key": "Chrome",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 33343
+                      },
+                      "key": "Chrome Mobile WebView",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 15621
+                      },
+                      "key": "idolchamp",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 14450
+                      },
+                      "key": "Crosswalk",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 12405
+                      },
+                      "key": "Mobile Safari",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 12108
+                      },
+                      "key": "Mobile Safari UI/WKWebView",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 7505
+                      },
+                      "key": "Chrome Mobile",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 5223
+                      },
+                      "key": "Whale",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 3756
+                      },
+                      "key": "okhttp",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 3084
+                      },
+                      "key": "Safari",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 1629
+                      },
+                      "key": "Firefox",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 1472
+                      },
+                      "key": "Apple Mail",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 1420
+                      },
+                      "key": "curl",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 1324
+                      },
+                      "key": "genieWidget",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 1200
+                      },
+                      "key": "Samsung Internet",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 864
+                      },
+                      "key": "Opera",
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "doc_count": 20
+              },
+              "key_as_string": "1617570000000",
+              "key": 1617570000000,
+              "doc_count": 1
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "1": {
+                        "value": 9841026
+                      },
+                      "key": "genie",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 3534224
+                      },
+                      "key": "Other",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 1340137
+                      },
+                      "key": "Android",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 223990
+                      },
+                      "key": "IE",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 117094
+                      },
+                      "key": "Chrome",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 90057
+                      },
+                      "key": "Mobile Safari UI/WKWebView",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 87037
+                      },
+                      "key": "Chrome Mobile WebView",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 29910
+                      },
+                      "key": "Crosswalk",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 22328
+                      },
+                      "key": "idolchamp",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 20706
+                      },
+                      "key": "Mobile Safari",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 9027
+                      },
+                      "key": "Chrome Mobile",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 8610
+                      },
+                      "key": "curl",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 8178
+                      },
+                      "key": "Whale",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 7709
+                      },
+                      "key": "okhttp",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 5544
+                      },
+                      "key": "Safari",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 2910
+                      },
+                      "key": "Firefox",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 2524
+                      },
+                      "key": "genieWidget",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 2295
+                      },
+                      "key": "Apple Mail",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 2276
+                      },
+                      "key": "what",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 1704
+                      },
+                      "key": "sample",
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "doc_count": 20
+              },
+              "key_as_string": "1617573600000",
+              "key": 1617573600000,
+              "doc_count": 1
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "1": {
+                        "value": 12053582
+                      },
+                      "key": "genie",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 4633873
+                      },
+                      "key": "Other",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 1473203
+                      },
+                      "key": "Android",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 682269
+                      },
+                      "key": "IE",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 261946
+                      },
+                      "key": "Chrome",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 97907
+                      },
+                      "key": "Chrome Mobile WebView",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 36277
+                      },
+                      "key": "Mobile Safari UI/WKWebView",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 31870
+                      },
+                      "key": "Mobile Safari",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 28578
+                      },
+                      "key": "Crosswalk",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 24406
+                      },
+                      "key": "Whale",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 22482
+                      },
+                      "key": "idolchamp",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 11238
+                      },
+                      "key": "Safari",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 10568
+                      },
+                      "key": "Chrome Mobile",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 9340
+                      },
+                      "key": "Apple Mail",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 8184
+                      },
+                      "key": "curl",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 8009
+                      },
+                      "key": "okhttp",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 5223
+                      },
+                      "key": "Firefox",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 3276
+                      },
+                      "key": "genieWidget",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 3150
+                      },
+                      "key": "what",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 2100
+                      },
+                      "key": "Edge",
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "doc_count": 20
+              },
+              "key_as_string": "1617577200000",
+              "key": 1617577200000,
+              "doc_count": 1
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "1": {
+                        "value": 7773757
+                      },
+                      "key": "genie",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 3130581
+                      },
+                      "key": "Other",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 1196804
+                      },
+                      "key": "Android",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 1108424
+                      },
+                      "key": "IE",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 460209
+                      },
+                      "key": "Chrome",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 91654
+                      },
+                      "key": "Chrome Mobile WebView",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 50797
+                      },
+                      "key": "Whale",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 37513
+                      },
+                      "key": "Mobile Safari",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 36267
+                      },
+                      "key": "Crosswalk",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 28789
+                      },
+                      "key": "idolchamp",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 24503
+                      },
+                      "key": "Mobile Safari UI/WKWebView",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 19227
+                      },
+                      "key": "Apple Mail",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 17771
+                      },
+                      "key": "Safari",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 8963
+                      },
+                      "key": "Chrome Mobile",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 8749
+                      },
+                      "key": "okhttp",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 7676
+                      },
+                      "key": "Firefox",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 4620
+                      },
+                      "key": "curl",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 4083
+                      },
+                      "key": "what",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 2212
+                      },
+                      "key": "HeadlessChrome",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 2163
+                      },
+                      "key": "Edge",
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "doc_count": 20
+              },
+              "key_as_string": "1617580800000",
+              "key": 1617580800000,
+              "doc_count": 1
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                },
+                "doc_count": 0
+              },
+              "key_as_string": "1617584400000",
+              "key": 1617584400000,
+              "doc_count": 0
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                },
+                "doc_count": 0
+              },
+              "key_as_string": "1617588000000",
+              "key": 1617588000000,
+              "doc_count": 0
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                },
+                "doc_count": 0
+              },
+              "key_as_string": "1617591600000",
+              "key": 1617591600000,
+              "doc_count": 0
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                },
+                "doc_count": 0
+              },
+              "key_as_string": "1617595200000",
+              "key": 1617595200000,
+              "doc_count": 0
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                },
+                "doc_count": 0
+              },
+              "key_as_string": "1617598800000",
+              "key": 1617598800000,
+              "doc_count": 0
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                },
+                "doc_count": 0
+              },
+              "key_as_string": "1617602400000",
+              "key": 1617602400000,
+              "doc_count": 0
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                },
+                "doc_count": 0
+              },
+              "key_as_string": "1617606000000",
+              "key": 1617606000000,
+              "doc_count": 0
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                },
+                "doc_count": 0
+              },
+              "key_as_string": "1617609600000",
+              "key": 1617609600000,
+              "doc_count": 0
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                },
+                "doc_count": 0
+              },
+              "key_as_string": "1617613200000",
+              "key": 1617613200000,
+              "doc_count": 0
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                },
+                "doc_count": 0
+              },
+              "key_as_string": "1617616800000",
+              "key": 1617616800000,
+              "doc_count": 0
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                },
+                "doc_count": 0
+              },
+              "key_as_string": "1617620400000",
+              "key": 1617620400000,
+              "doc_count": 0
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                },
+                "doc_count": 0
+              },
+              "key_as_string": "1617624000000",
+              "key": 1617624000000,
+              "doc_count": 0
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                },
+                "doc_count": 0
+              },
+              "key_as_string": "1617627600000",
+              "key": 1617627600000,
+              "doc_count": 0
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                },
+                "doc_count": 0
+              },
+              "key_as_string": "1617631200000",
+              "key": 1617631200000,
+              "doc_count": 0
+            }
+          ]
+        }
+      },
+      "status": 200
+    }
+  ]
+}

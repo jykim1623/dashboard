@@ -1,0 +1,1752 @@
+{
+  "took": 15,
+  "responses": [
+    {
+      "took": 14,
+      "timed_out": false,
+      "_shards": {
+        "total": 6,
+        "successful": 6,
+        "skipped": 0,
+        "failed": 0
+      },
+      "hits": {
+        "total": {
+          "value": 10,
+          "relation": "eq"
+        },
+        "max_score": null,
+        "hits": []
+      },
+      "aggregations": {
+        "0": {
+          "buckets": [
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "1": {
+                        "value": 6506188
+                      },
+                      "key": "iOS-Device",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 698249
+                      },
+                      "key": "Other",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 348277
+                      },
+                      "key": "Pantech IM-A850L",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 269161
+                      },
+                      "key": "iPhone",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 206708
+                      },
+                      "key": "Generic Smartphone",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 190270
+                      },
+                      "key": "Samsung SM-G977N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 154274
+                      },
+                      "key": "Samsung SHV-E210L",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 140048
+                      },
+                      "key": "Samsung SM-N971N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 136901
+                      },
+                      "key": "Samsung SM-N960N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 136501
+                      },
+                      "key": "Samsung SM-N976N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 122881
+                      },
+                      "key": "Samsung SM-J320N0",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 115391
+                      },
+                      "key": "Samsung SM-G965N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 96395
+                      },
+                      "key": "Samsung SM-G986N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 92952
+                      },
+                      "key": "Samsung SM-N986N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 86187
+                      },
+                      "key": "Samsung SM-N981N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 82592
+                      },
+                      "key": "Samsung SM-A315N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 80129
+                      },
+                      "key": "Samsung SM-G981N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 75236
+                      },
+                      "key": "IM-100K",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 71428
+                      },
+                      "key": "Samsung SM-G991N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 60449
+                      },
+                      "key": "Samsung SM-N950N",
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "doc_count": 20
+              },
+              "key_as_string": "1617548400000",
+              "key": 1617548400000,
+              "doc_count": 1
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "1": {
+                        "value": 4742646
+                      },
+                      "key": "iOS-Device",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 407499
+                      },
+                      "key": "Other",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 350376
+                      },
+                      "key": "Pantech IM-A850L",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 154566
+                      },
+                      "key": "Samsung SHV-E210L",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 139838
+                      },
+                      "key": "Generic Smartphone",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 130576
+                      },
+                      "key": "Samsung SM-G977N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 107206
+                      },
+                      "key": "Samsung SM-J320N0",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 98945
+                      },
+                      "key": "Samsung SM-G965N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 98194
+                      },
+                      "key": "Samsung SM-N971N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 94876
+                      },
+                      "key": "Samsung SM-N976N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 93091
+                      },
+                      "key": "Samsung SM-N960N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 75268
+                      },
+                      "key": "IM-100K",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 72001
+                      },
+                      "key": "Samsung SM-N986N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 71694
+                      },
+                      "key": "iPhone",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 68389
+                      },
+                      "key": "Samsung SM-G986N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 59087
+                      },
+                      "key": "Samsung SM-G981N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 57984
+                      },
+                      "key": "Samsung SM-A720S",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 57265
+                      },
+                      "key": "Samsung SM-N981N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 52448
+                      },
+                      "key": "Samsung SM-G991N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 43706
+                      },
+                      "key": "Samsung SM-G973N",
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "doc_count": 20
+              },
+              "key_as_string": "1617552000000",
+              "key": 1617552000000,
+              "doc_count": 1
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "1": {
+                        "value": 3153817
+                      },
+                      "key": "iOS-Device",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 350625
+                      },
+                      "key": "Pantech IM-A850L",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 265539
+                      },
+                      "key": "Other",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 154535
+                      },
+                      "key": "Samsung SHV-E210L",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 132783
+                      },
+                      "key": "Samsung SM-J320N0",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 93703
+                      },
+                      "key": "Generic Smartphone",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 91822
+                      },
+                      "key": "Samsung SM-G977N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 85972
+                      },
+                      "key": "Samsung SM-G965N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 75389
+                      },
+                      "key": "IM-100K",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 66588
+                      },
+                      "key": "Samsung SM-N976N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 64113
+                      },
+                      "key": "Samsung SM-N960N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 60905
+                      },
+                      "key": "Samsung SM-N971N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 57951
+                      },
+                      "key": "Samsung SM-A720S",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 48772
+                      },
+                      "key": "Samsung SM-N986N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 43858
+                      },
+                      "key": "Samsung SM-G986N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 41722
+                      },
+                      "key": "Samsung SM-N981N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 39465
+                      },
+                      "key": "Samsung SM-J730K",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 37195
+                      },
+                      "key": "Samsung SM-G991N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 36599
+                      },
+                      "key": "Samsung SM-G981N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 34781
+                      },
+                      "key": "iPhone",
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "doc_count": 20
+              },
+              "key_as_string": "1617555600000",
+              "key": 1617555600000,
+              "doc_count": 1
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "1": {
+                        "value": 2033640
+                      },
+                      "key": "iOS-Device",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 351230
+                      },
+                      "key": "Pantech IM-A850L",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 172279
+                      },
+                      "key": "Other",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 154140
+                      },
+                      "key": "Samsung SHV-E210L",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 133782
+                      },
+                      "key": "Samsung SM-J320N0",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 76892
+                      },
+                      "key": "Samsung SM-G965N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 75342
+                      },
+                      "key": "IM-100K",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 65501
+                      },
+                      "key": "Generic Smartphone",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 59794
+                      },
+                      "key": "Samsung SM-G977N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 57394
+                      },
+                      "key": "Samsung SM-A720S",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 50581
+                      },
+                      "key": "Samsung SM-N976N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 45757
+                      },
+                      "key": "Samsung SM-A315N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 39896
+                      },
+                      "key": "Samsung SM-J730K",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 39696
+                      },
+                      "key": "Samsung SM-N960N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 37766
+                      },
+                      "key": "Samsung SM-N971N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 33805
+                      },
+                      "key": "Samsung SM-N986N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 24471
+                      },
+                      "key": "Samsung SM-G935L",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 24337
+                      },
+                      "key": "Samsung SM-G986N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 24229
+                      },
+                      "key": "Samsung SM-G981N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 23283
+                      },
+                      "key": "Samsung SM-N950N",
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "doc_count": 20
+              },
+              "key_as_string": "1617559200000",
+              "key": 1617559200000,
+              "doc_count": 1
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "1": {
+                        "value": 1329692
+                      },
+                      "key": "iOS-Device",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 349900
+                      },
+                      "key": "Pantech IM-A850L",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 155013
+                      },
+                      "key": "Samsung SHV-E210L",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 136268
+                      },
+                      "key": "Samsung SM-J320N0",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 132887
+                      },
+                      "key": "Samsung SM-A315N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 125840
+                      },
+                      "key": "Other",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 75106
+                      },
+                      "key": "IM-100K",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 74228
+                      },
+                      "key": "Samsung SM-G965N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 58059
+                      },
+                      "key": "Samsung SM-A720S",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 50625
+                      },
+                      "key": "Generic Smartphone",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 49061
+                      },
+                      "key": "Samsung SM-G977N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 45702
+                      },
+                      "key": "Samsung SM-N976N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 43069
+                      },
+                      "key": "Samsung SM-J730K",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 36778
+                      },
+                      "key": "Samsung SM-N960N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 32928
+                      },
+                      "key": "Samsung SM-N971N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 25863
+                      },
+                      "key": "Samsung SM-N986N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 24904
+                      },
+                      "key": "Samsung SM-G935L",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 22484
+                      },
+                      "key": "Samsung SM-G986N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 19596
+                      },
+                      "key": "Samsung SM-T375S",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 18550
+                      },
+                      "key": "Samsung SM-G991N",
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "doc_count": 20
+              },
+              "key_as_string": "1617562800000",
+              "key": 1617562800000,
+              "doc_count": 1
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "1": {
+                        "value": 1442702
+                      },
+                      "key": "iOS-Device",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 347266
+                      },
+                      "key": "Pantech IM-A850L",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 155059
+                      },
+                      "key": "Samsung SHV-E210L",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 135494
+                      },
+                      "key": "Other",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 135336
+                      },
+                      "key": "Samsung SM-J320N0",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 127101
+                      },
+                      "key": "Samsung SM-A315N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 77888
+                      },
+                      "key": "Samsung SM-G965N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 75161
+                      },
+                      "key": "IM-100K",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 68472
+                      },
+                      "key": "Generic Smartphone",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 62753
+                      },
+                      "key": "Samsung SM-G977N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 58253
+                      },
+                      "key": "Samsung SM-A720S",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 54238
+                      },
+                      "key": "Samsung SM-N976N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 49479
+                      },
+                      "key": "Samsung SM-N960N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 41465
+                      },
+                      "key": "Samsung SM-J730K",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 40784
+                      },
+                      "key": "Samsung SM-N971N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 35954
+                      },
+                      "key": "Samsung SM-N986N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 32228
+                      },
+                      "key": "Samsung SM-G986N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 29559
+                      },
+                      "key": "Samsung SM-G935L",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 25102
+                      },
+                      "key": "Samsung SM-N981N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 22529
+                      },
+                      "key": "Samsung SM-G981N",
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "doc_count": 20
+              },
+              "key_as_string": "1617566400000",
+              "key": 1617566400000,
+              "doc_count": 1
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "1": {
+                        "value": 3615896
+                      },
+                      "key": "iOS-Device",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 348954
+                      },
+                      "key": "Pantech IM-A850L",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 193392
+                      },
+                      "key": "Other",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 154727
+                      },
+                      "key": "Samsung SHV-E210L",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 147257
+                      },
+                      "key": "Samsung SM-G977N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 142582
+                      },
+                      "key": "Generic Smartphone",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 131911
+                      },
+                      "key": "Samsung SM-A315N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 129487
+                      },
+                      "key": "Samsung SM-J320N0",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 112721
+                      },
+                      "key": "Samsung SM-N960N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 110780
+                      },
+                      "key": "Samsung SM-N976N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 101582
+                      },
+                      "key": "Samsung SM-G965N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 87885
+                      },
+                      "key": "Samsung SM-N971N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 77998
+                      },
+                      "key": "Samsung SM-N986N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 75239
+                      },
+                      "key": "IM-100K",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 69579
+                      },
+                      "key": "Samsung SM-G986N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 63681
+                      },
+                      "key": "Samsung SM-N981N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 58447
+                      },
+                      "key": "Samsung SM-A720S",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 57614
+                      },
+                      "key": "CT1101",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 53333
+                      },
+                      "key": "Samsung SM-G981N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 45116
+                      },
+                      "key": "Samsung SM-N950N",
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "doc_count": 20
+              },
+              "key_as_string": "1617570000000",
+              "key": 1617570000000,
+              "doc_count": 1
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "1": {
+                        "value": 9870858
+                      },
+                      "key": "iOS-Device",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 398833
+                      },
+                      "key": "Other",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 349981
+                      },
+                      "key": "Pantech IM-A850L",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 337682
+                      },
+                      "key": "Samsung SM-G977N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 317543
+                      },
+                      "key": "CT1101",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 301708
+                      },
+                      "key": "Generic Smartphone",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 245970
+                      },
+                      "key": "Samsung SM-N976N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 234787
+                      },
+                      "key": "Samsung SM-N960N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 226419
+                      },
+                      "key": "Samsung SM-N971N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 163310
+                      },
+                      "key": "Samsung SM-N986N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 162927
+                      },
+                      "key": "Samsung SM-G986N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 154896
+                      },
+                      "key": "Samsung SM-G965N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 154849
+                      },
+                      "key": "Samsung SHV-E210L",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 153206
+                      },
+                      "key": "Samsung SM-A315N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 144811
+                      },
+                      "key": "Samsung SM-N981N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 139280
+                      },
+                      "key": "Samsung SM-J320N0",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 137449
+                      },
+                      "key": "Samsung SM-G981N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 116295
+                      },
+                      "key": "Samsung SM-G991N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 112168
+                      },
+                      "key": "iPhone",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 104280
+                      },
+                      "key": "Samsung SM-G988N",
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "doc_count": 20
+              },
+              "key_as_string": "1617573600000",
+              "key": 1617573600000,
+              "doc_count": 1
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "1": {
+                        "value": 12085732
+                      },
+                      "key": "iOS-Device",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 1038993
+                      },
+                      "key": "Other",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 448195
+                      },
+                      "key": "Samsung SM-G977N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 395049
+                      },
+                      "key": "Generic Smartphone",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 364499
+                      },
+                      "key": "CT1101",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 341487
+                      },
+                      "key": "Pantech IM-A850L",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 337647
+                      },
+                      "key": "Samsung SM-N960N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 314170
+                      },
+                      "key": "Samsung SM-N976N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 299260
+                      },
+                      "key": "Samsung SM-N971N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 210412
+                      },
+                      "key": "Samsung SM-N986N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 207600
+                      },
+                      "key": "Samsung SM-G986N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 191624
+                      },
+                      "key": "Samsung SM-N981N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 190245
+                      },
+                      "key": "Samsung SM-G965N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 186322
+                      },
+                      "key": "Samsung SM-G981N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 185920
+                      },
+                      "key": "Samsung SM-A315N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 153073
+                      },
+                      "key": "Samsung SHV-E210L",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 145786
+                      },
+                      "key": "Samsung SM-G991N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 133628
+                      },
+                      "key": "Samsung SM-G973N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 132293
+                      },
+                      "key": "Samsung SM-N950N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 122329
+                      },
+                      "key": "Samsung SM-J320N0",
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "doc_count": 20
+              },
+              "key_as_string": "1617577200000",
+              "key": 1617577200000,
+              "doc_count": 1
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": [
+                    {
+                      "1": {
+                        "value": 7810972
+                      },
+                      "key": "iOS-Device",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 1715304
+                      },
+                      "key": "Other",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 323902
+                      },
+                      "key": "Pantech IM-A850L",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 285484
+                      },
+                      "key": "Samsung SM-G977N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 272900
+                      },
+                      "key": "Generic Smartphone",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 211359
+                      },
+                      "key": "Samsung SM-N976N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 205037
+                      },
+                      "key": "Samsung SM-N960N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 185850
+                      },
+                      "key": "Samsung SM-N971N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 169978
+                      },
+                      "key": "Samsung SM-A315N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 161499
+                      },
+                      "key": "CT1101",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 154488
+                      },
+                      "key": "Samsung SHV-E210L",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 143125
+                      },
+                      "key": "Samsung SM-N986N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 140660
+                      },
+                      "key": "Samsung SM-G965N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 134636
+                      },
+                      "key": "Samsung SM-J320N0",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 134141
+                      },
+                      "key": "Samsung SM-G986N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 123628
+                      },
+                      "key": "Samsung SM-N981N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 112967
+                      },
+                      "key": "Samsung SM-G981N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 89871
+                      },
+                      "key": "Samsung SM-G991N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 84414
+                      },
+                      "key": "Samsung SM-G973N",
+                      "doc_count": 1
+                    },
+                    {
+                      "1": {
+                        "value": 82567
+                      },
+                      "key": "Samsung SM-G988N",
+                      "doc_count": 1
+                    }
+                  ]
+                },
+                "doc_count": 20
+              },
+              "key_as_string": "1617580800000",
+              "key": 1617580800000,
+              "doc_count": 1
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                },
+                "doc_count": 0
+              },
+              "key_as_string": "1617584400000",
+              "key": 1617584400000,
+              "doc_count": 0
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                },
+                "doc_count": 0
+              },
+              "key_as_string": "1617588000000",
+              "key": 1617588000000,
+              "doc_count": 0
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                },
+                "doc_count": 0
+              },
+              "key_as_string": "1617591600000",
+              "key": 1617591600000,
+              "doc_count": 0
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                },
+                "doc_count": 0
+              },
+              "key_as_string": "1617595200000",
+              "key": 1617595200000,
+              "doc_count": 0
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                },
+                "doc_count": 0
+              },
+              "key_as_string": "1617598800000",
+              "key": 1617598800000,
+              "doc_count": 0
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                },
+                "doc_count": 0
+              },
+              "key_as_string": "1617602400000",
+              "key": 1617602400000,
+              "doc_count": 0
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                },
+                "doc_count": 0
+              },
+              "key_as_string": "1617606000000",
+              "key": 1617606000000,
+              "doc_count": 0
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                },
+                "doc_count": 0
+              },
+              "key_as_string": "1617609600000",
+              "key": 1617609600000,
+              "doc_count": 0
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                },
+                "doc_count": 0
+              },
+              "key_as_string": "1617613200000",
+              "key": 1617613200000,
+              "doc_count": 0
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                },
+                "doc_count": 0
+              },
+              "key_as_string": "1617616800000",
+              "key": 1617616800000,
+              "doc_count": 0
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                },
+                "doc_count": 0
+              },
+              "key_as_string": "1617620400000",
+              "key": 1617620400000,
+              "doc_count": 0
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                },
+                "doc_count": 0
+              },
+              "key_as_string": "1617624000000",
+              "key": 1617624000000,
+              "doc_count": 0
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                },
+                "doc_count": 0
+              },
+              "key_as_string": "1617627600000",
+              "key": 1617627600000,
+              "doc_count": 0
+            },
+            {
+              "3": {
+                "0": {
+                  "doc_count_error_upper_bound": 0,
+                  "sum_other_doc_count": 0,
+                  "buckets": []
+                },
+                "doc_count": 0
+              },
+              "key_as_string": "1617631200000",
+              "key": 1617631200000,
+              "doc_count": 0
+            }
+          ]
+        }
+      },
+      "status": 200
+    }
+  ]
+}
