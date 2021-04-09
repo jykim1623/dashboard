@@ -8,6 +8,8 @@ export class PanelModel {
     this.xaxis = data.xaxis;
     this.yaxis = data.yaxis;
     this.tooltip = data.tooltip;
+    this.spec = data.spec;
+    this.data = data.data;
   }
 
   setIsViewing(isViewing) {

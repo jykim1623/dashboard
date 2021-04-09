@@ -1,19 +1,5 @@
 import { Vega, VegaLite as VegaRender } from "react-vega";
-import {
-  // generateAggtoAgg,
-  handleSeries,
-} from "../../../app/plugins/elastic.handler";
-// import // geo,
-// layeredPlot,
-// line,
-// lineWithConfidence,
-// multilineWithTooltip,
-// multiSeriesLine,
-// multiSeriesLineArea,
-// normalizedStackedArea,
-// pie,
-// from
-// "./spec";
+import { handleSeriesVega } from "../../../app/plugins/elastic.handler";
 
 import statusCode from "../../../assets/jsons/statuscode.json";
 import bodySent from "../../../assets/jsons/bodysent.json";
@@ -30,6 +16,7 @@ import {
   vegaPie,
   vegaSingleMultiSeries,
 } from "./spec";
+import { View } from "vega-lite";
 
 const VegaLiteRenderer = ({
   spec,
@@ -54,6 +41,19 @@ const VegaLiteRenderer = ({
       </div>
     );
   }
+
+  const callbackHover = function (a, b, c) {
+    alert("131313");
+  };
+  const signalListeners = {
+    hover: callbackHover,
+    click: callbackHover,
+    dragstart: callbackHover,
+    brush: callbackHover,
+    click: function (a, b, c) {
+      console.log(a, b, c)
+    }
+  };
   return (
     <div>
       <h2>{title}</h2>
@@ -64,6 +64,8 @@ const VegaLiteRenderer = ({
         actions={false}
         data={data}
         renderer="canvas"
+        signalListeners={signalListeners}
+      // onNewView={n}
       />
     </div>
   );
@@ -79,8 +81,8 @@ const BsCard = ({ children }) => {
   );
 };
 
-const VegaCover = ({ aggs }) => {
-  const { data, symbols } = handleSeries(aggs);
+const VegaAreaCover = ({ aggs, title }) => {
+  const { data, symbols } = handleSeriesVega(aggs);
   return (
     <VegaLiteRenderer
       spec={vegaLiteSeriseSpec(symbols)}
@@ -88,6 +90,21 @@ const VegaCover = ({ aggs }) => {
       height={200}
       data={data}
       lite={true}
+      title={title}
+    />
+  );
+};
+
+const VegaPieCover = ({ aggs, title }) => {
+  const { data } = handleSeriesVega(aggs);
+  return (
+    <VegaLiteRenderer
+      spec={vegaLitePieSpec}
+      width={400}
+      height={200}
+      data={data}
+      lite={true}
+      title={title}
     />
   );
 };
@@ -95,65 +112,27 @@ const VegaCover = ({ aggs }) => {
 const VegaLite = () => {
   return (
     <div style={{ display: "flex", flexWrap: "wrap" }}>
-      {/* <BsCard>
-        <VegaLiteRenderer
-          spec={vegaLitePieSpec}
-          width={200}
-          height={200}
-          data={handleSeries(referer.responses[0].aggregations)}
-          lite={true}
-        />
-      </BsCard> */}
       <BsCard>
-        <VegaCover aggs={statusCode.responses[0].aggregations} />
+        <VegaAreaCover
+          title="status code"
+          aggs={statusCode.responses[0].aggregations}
+        />
       </BsCard>
-      {/* <VegaLiteRenderer
-        spec={vegaSingleMultiSeries}
-        title="status code"
-        width={700}
-        height={500}
-        data={handleSeries(statusCode.responses[0].aggregations)}
-      /> */}
-      {/* <VegaLiteRenderer
-        spec={vegaMultiSeries}
-        title="status code"
-        data={handleSeries(statusCode.responses[0].aggregations)}
-      />
-      <VegaLiteRenderer
-        spec={vegaMultiSeries}
-        data={handleSeries(session.responses[0].aggregations)}
-        title="Session"
-      />
-      <VegaLiteRenderer
-        spec={vegaMultiSeries}
-        data={handleSeries(uv.responses[0].aggregations)}
-        title="uv"
-      />
-      <VegaLiteRenderer
-        spec={vegaMultiSeries}
-        data={handleSeries(bodySent.responses[1].aggregations)}
-        title="Body sent"
-      />
-      <VegaLiteRenderer
-        spec={vegaPie}
-        data={handleSeries(browser.responses[0].aggregations)}
-        title="Browser"
-      />
-      <VegaLiteRenderer
-        spec={vegaPie}
-        data={handleSeries(device.responses[0].aggregations)}
-        title="device"
-      />
-      <VegaLiteRenderer
-        spec={vegaMultiSeries}
-        data={handleSeries(totalRequest.responses[0].aggregations)}
-        title="Total Request"
-      />
-      <VegaLiteRenderer
-        spec={vegaPie}
-        data={handleSeries(referer.responses[0].aggregations)}
-        title="Referer"
-      /> */}
+      <BsCard>
+        <VegaAreaCover
+          title="session"
+          aggs={session.responses[0].aggregations}
+        />
+      </BsCard>
+      <BsCard>
+        <VegaAreaCover title="uv" aggs={uv.responses[0].aggregations} />
+      </BsCard>
+      <BsCard>
+        <VegaPieCover
+          title="browser"
+          aggs={browser.responses[0].aggregations}
+        />
+      </BsCard>
     </div>
   );
 };

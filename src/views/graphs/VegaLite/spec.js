@@ -1,238 +1,6 @@
-const $schema = "https://vega.github.io/schema/vega/v5.json";
 const liteSchema = "https://vega.github.io/schema/vega-lite/v5.json";
-
-export const vegaMultiSeries = {
-  $schema,
-  data: [{ name: "table" }],
-  scales: [
-    {
-      name: "xscale",
-      type: "time",
-      domain: { data: "table", field: "date" },
-      range: "width",
-    },
-    {
-      name: "yscale",
-      domain: { data: "table", field: "value" },
-      nice: true,
-      zero: true,
-      range: "height",
-    },
-    {
-      name: "color",
-      type: "ordinal",
-      range: "category",
-      domain: { data: "table", field: "symbol" },
-    },
-  ],
-  axes: [
-    { orient: "bottom", scale: "xscale", grid: true },
-    { orient: "left", scale: "yscale", format: "s", grid: true },
-  ],
-  marks: [
-    {
-      type: "group",
-      from: {
-        facet: {
-          name: "series",
-          data: "table",
-          groupby: "symbol",
-        },
-      },
-      marks: [
-        {
-          type: "area",
-          from: { data: "series" },
-          encode: {
-            enter: {
-              x: { scale: "xscale", field: "date" },
-              y: { scale: "yscale", field: "value" },
-              y2: { scale: "yscale", value: 0 },
-              fill: {
-                scale: "color",
-                field: "symbol",
-              },
-              opacity: { value: 0.4 },
-              // stroke: { scale: "color", field: "symbol" },
-              // strokeWidth: { value: 2 },
-            },
-          },
-        },
-        {
-          type: "line",
-          from: { data: "series" },
-          encode: {
-            enter: {
-              x: { scale: "xscale", field: "date" },
-              y: { scale: "yscale", field: "value" },
-              stroke: { scale: "color", field: "symbol" },
-              strokeWidth: { value: 2 },
-            },
-          },
-        },
-      ],
-    },
-  ],
-};
-
-export const vegaPie = {
-  $schema,
-  description: "A basic pie chart example.",
-  autosize: "none",
-  signals: [
-    {
-      name: "startAngle",
-      value: 0,
-    },
-    {
-      name: "endAngle",
-      value: 6.29,
-    },
-    {
-      name: "padAngle",
-      value: 0,
-    },
-    {
-      name: "innerRadius",
-      value: 0,
-    },
-    {
-      name: "cornerRadius",
-      value: 0,
-    },
-    {
-      name: "sort",
-      value: true,
-    },
-  ],
-
-  data: [
-    {
-      name: "table",
-      transform: [
-        {
-          type: "aggregate",
-          fields: ["value"],
-          groupby: ["symbol"],
-          ops: ["sum"],
-          as: ["value"],
-        },
-        {
-          type: "pie",
-          field: "value",
-          startAngle: { signal: "startAngle" },
-          endAngle: { signal: "endAngle" },
-          sort: { signal: "sort" },
-        },
-      ],
-    },
-  ],
-
-  scales: [
-    {
-      name: "color",
-      type: "ordinal",
-      domain: { data: "table", field: "symbol" },
-      range: { scheme: "category20" },
-    },
-  ],
-
-  marks: [
-    {
-      type: "arc",
-      from: { data: "table" },
-      encode: {
-        enter: {
-          fill: { scale: "color", field: "symbol" },
-          x: { signal: "width / 2" },
-          y: { signal: "height / 2" },
-        },
-        update: {
-          startAngle: { field: "startAngle" },
-          endAngle: { field: "endAngle" },
-          padAngle: { signal: "padAngle" },
-          innerRadius: { signal: "innerRadius" },
-          outerRadius: { signal: "width / 4" },
-          cornerRadius: { signal: "cornerRadius" },
-        },
-      },
-    },
-  ],
-};
-
-export const vegaSingleMultiSeries = (list) => {
-  return {
-    $schema,
-    data: [{ name: "table" }],
-    scales: [
-      {
-        name: "xscale",
-        type: "time",
-        domain: { data: "table", field: "date" },
-        range: "width",
-      },
-      {
-        name: "yscale",
-        domain: { data: "table", field: "value" },
-        nice: true,
-        zero: true,
-        range: "height",
-      },
-      {
-        name: "color",
-        type: "ordinal",
-        range: "category",
-        domain: { data: "table", field: "symbol" },
-      },
-    ],
-    axes: [
-      { orient: "bottom", scale: "xscale", grid: true },
-      { orient: "left", scale: "yscale", format: "s", grid: true },
-    ],
-    marks: [
-      {
-        type: "group",
-        from: {
-          facet: {
-            name: "series",
-            data: "table",
-            groupby: "symbol",
-          },
-        },
-        marks: [
-          {
-            type: "area",
-            from: { data: "series" },
-            encode: {
-              enter: {
-                x: { scale: "xscale", field: "date" },
-                y: { scale: "yscale", field: "value" },
-                y2: { scale: "yscale", value: 0 },
-                fill: {
-                  scale: "color",
-                  field: "symbol",
-                },
-                opacity: { value: 0.4 },
-              },
-            },
-          },
-          {
-            type: "line",
-            from: { data: "series" },
-            encode: {
-              enter: {
-                x: { scale: "xscale", field: "date" },
-                y: { scale: "yscale", field: "value" },
-                stroke: { scale: "color", field: "symbol" },
-                strokeWidth: { value: 2 },
-              },
-            },
-          },
-        ],
-      },
-    ],
-  };
-};
+const url = "https://vega.github.io/editor";
+const geourl = 'https://vega.github.io/vega-lite';
 
 export const vegaLitePieSpec = {
   $schema: liteSchema,
@@ -246,12 +14,13 @@ export const vegaLitePieSpec = {
   mark: "arc",
   encoding: {
     theta: { field: "value", type: "quantitative" },
-    color: { field: "symbol", type: "nominal", legend: null },
+    color: { field: "symbol", type: "nominal", legend: true },
   },
   view: { stroke: null },
 };
 
 export const vegaLiteSeriseSpec = (list) => {
+  console.log(list);
   return {
     $schema: "https://vega.github.io/schema/vega-lite/v5.json",
     description: "Stock prices of 5 Tech Companies over Time.",
@@ -304,4 +73,192 @@ export const vegaLiteSeriseSpec = (list) => {
       },
     ],
   };
+};
+
+export const vegaErrorBand = {
+  $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+  data: { url: `${url}/data/cars.json` },
+  encoding: {
+    x: {
+      field: "Year",
+      timeUnit: "year",
+      title: null,
+    },
+  },
+  layer: [
+    {
+      mark: { type: "errorband", extent: "ci" },
+      encoding: {
+        y: {
+          field: "Miles_per_Gallon",
+          type: "quantitative",
+          title: null,
+        },
+      },
+    },
+    {
+      mark: "line",
+      encoding: {
+        y: {
+          aggregate: "mean",
+          field: "Miles_per_Gallon",
+        },
+      },
+    },
+  ],
+};
+
+export const vegaHitmap = {
+  $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+  data: {
+    url: `${url}/data/seattle-weather.csv`,
+  },
+  config: {
+    view: {
+      strokeWidth: 0,
+      step: 13,
+    },
+    axis: {
+      domain: false,
+    },
+  },
+  mark: "rect",
+  encoding: {
+    x: {
+      field: "date",
+      timeUnit: "date",
+      type: "ordinal",
+      title: null,
+      axis: {
+        labelAngle: 0,
+        format: "%e",
+      },
+    },
+    y: {
+      field: "date",
+      timeUnit: "month",
+      type: "ordinal",
+      title: null,
+    },
+    color: {
+      field: "temp_max",
+      aggregate: "max",
+      type: "quantitative",
+      legend: null,
+    },
+  },
+};
+
+export const vegaThreshold = {
+  $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+  description:
+    "The PM2.5 value of Beijing observed 15 days, highlighting the days when PM2.5 level is hazardous to human health. Data source https://chartaccent.github.io/chartaccent.html",
+  layer: [
+    {
+      data: {
+        values: [
+          { Day: 1, Value: 54.8 },
+          { Day: 2, Value: 112.1 },
+          { Day: 3, Value: 63.6 },
+          { Day: 4, Value: 37.6 },
+          { Day: 5, Value: 79.7 },
+          { Day: 6, Value: 137.9 },
+          { Day: 7, Value: 120.1 },
+          { Day: 8, Value: 103.3 },
+          { Day: 9, Value: 394.8 },
+          { Day: 10, Value: 199.5 },
+          { Day: 11, Value: 72.3 },
+          { Day: 12, Value: 51.1 },
+          { Day: 13, Value: 112.0 },
+          { Day: 14, Value: 174.5 },
+          { Day: 15, Value: 130.5 },
+        ],
+      },
+      layer: [
+        {
+          mark: "bar",
+          encoding: {
+            x: { field: "Day", type: "ordinal", axis: { labelAngle: 0 } },
+            y: { field: "Value", type: "quantitative" },
+          },
+        },
+        {
+          mark: "bar",
+          transform: [
+            { filter: "datum.Value >= 300" },
+            { calculate: "300", as: "baseline" },
+          ],
+          encoding: {
+            x: { field: "Day", type: "ordinal", title: null },
+            y: {
+              field: "baseline",
+              type: "quantitative",
+              title: null,
+            },
+            y2: { field: "Value" },
+            color: { value: "#e45755" },
+          },
+        },
+      ],
+    },
+    {
+      data: {
+        values: [{}],
+      },
+      encoding: {
+        y: { datum: 200 },
+      },
+      layer: [
+        {
+          mark: "rule",
+        },
+        {
+          mark: {
+            type: "text",
+            align: "right",
+            baseline: "bottom",
+            dx: -2,
+            dy: -2,
+            x: "width",
+            text: "hazardous",
+          },
+        },
+      ],
+    },
+  ],
+};
+
+export const vegaGeo = {
+  $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+  width: 500,
+  height: 300,
+  data: {
+    url: `${geourl}/data/us-10m.json`,
+    format: {
+      type: "topojson",
+      feature: "counties",
+    },
+  },
+  transform: [
+    {
+      lookup: "id",
+      from: {
+        data: {
+          url: `${geourl}/data/unemployment.tsv`,
+        },
+        key: "id",
+        fields: ["rate"],
+      },
+    },
+  ],
+  projection: {
+    type: "albersUsa",
+  },
+  mark: "geoshape",
+  encoding: {
+    color: {
+      field: "rate",
+      type: "quantitative",
+    },
+  },
 };

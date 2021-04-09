@@ -53,10 +53,15 @@ const Header = () => {
                   </Link>
                 </li>
                 <li>
+                  <Link className="dropdown-item" to="/graph/highchart">
+                    High Chart
+                  </Link>
+                </li>
+                {/* <li>
                   <Link className="dropdown-item" to="/graph/d3js">
                     d3js
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </li>
             <li className="nav-item dropdown">
@@ -73,18 +78,23 @@ const Header = () => {
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
                   <Link className="dropdown-item" to="/d/00000001">
-                    sample1
+                    chartjs
                   </Link>
                 </li>
                 <li>
                   <Link className="dropdown-item" to="/d/00000002">
-                    sample2
+                    vegalite
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/d/00000003">
+                    highchart
                   </Link>
                 </li>
               </ul>
             </li>
           </ul>
-          <form className="d-flex">
+          {/* <form className="d-flex">
             <input
               className="form-control me-2"
               type="search"
@@ -94,7 +104,7 @@ const Header = () => {
             <button className="btn btn-outline-success" type="submit">
               Search
             </button>
-          </form>
+          </form> */}
         </div>
       </div>
     </nav>

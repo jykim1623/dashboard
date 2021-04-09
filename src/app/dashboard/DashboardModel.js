@@ -25,6 +25,9 @@ export class DashboardModel {
     this.version = data.version || 0;
     this.links = data.links || [];
     this.gnetId = data.gnetId || null;
+    this.label = data.label;
+    this.isResizable = data.isResizable;
+    this.isDraggable = data.isDraggable;
     this.panels = _.map(data.panels || [], (panelData) => {
       return new PanelModel(panelData);
     });

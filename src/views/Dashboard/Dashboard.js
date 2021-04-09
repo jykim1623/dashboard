@@ -29,12 +29,35 @@ const Dashboard = () => {
       setDashboard(new DashboardModel(list.find((l) => l.id === id)));
     }
   }, [id]);
-  console.log(dashboard);
+  const handleToggle = (e) => {
+    const newDashboard = new DashboardModel({ ...dashboard, [e.target.name]: e.target.checked })
+    setDashboard(newDashboard);
+  };
   return (
-    <div>
+    <>
       {!dashboard && <div>loading...</div>}
-      {dashboard && <DashboardPage dashboard={dashboard} />}
-    </div>
+      {dashboard && (
+        <>
+          <label htmlFor="drag">drag</label>
+          <input
+            id="drag"
+            type="checkbox"
+            name="isDraggable"
+            checked={dashboard.isDraggable}
+            onChange={handleToggle}
+          />
+          <label htmlFor="resize">resize</label>
+          <input
+            id="resize"
+            type="checkbox"
+            name="isResizable"
+            checked={dashboard.isResizable}
+            onChange={handleToggle}
+          />
+          <DashboardPage dashboard={dashboard} />
+        </>
+      )}
+    </>
   );
 };
 

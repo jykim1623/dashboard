@@ -1,52 +1,24 @@
-import Chart from "chart.js";
-import { useEffect, useRef } from "react";
+import ChartjsLine from "./ChartjsLine";
+import DoughnutChart from "./Doughnut";
+import ChartjsMultiAxis from "./ChartjsMultiAxis";
+import ChartjsMultiLine from "./ChartjsMultiLine";
 
 const Chartjs = () => {
-  const ref = useRef(null);
-  useEffect(() => {
-    if (ref.current) {
-      var myChart = new Chart(ref.current, {
-        type: "bar",
-        data: {
-          labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-          datasets: [
-            {
-              label: "# of Votes",
-              data: [12, 19, 3, 5, 2, 3],
-              backgroundColor: [
-                "rgba(255, 99, 132, 0.2)",
-                "rgba(54, 162, 235, 0.2)",
-                "rgba(255, 206, 86, 0.2)",
-                "rgba(75, 192, 192, 0.2)",
-                "rgba(153, 102, 255, 0.2)",
-                "rgba(255, 159, 64, 0.2)",
-              ],
-              borderColor: [
-                "rgba(255, 99, 132, 1)",
-                "rgba(54, 162, 235, 1)",
-                "rgba(255, 206, 86, 1)",
-                "rgba(75, 192, 192, 1)",
-                "rgba(153, 102, 255, 1)",
-                "rgba(255, 159, 64, 1)",
-              ],
-              borderWidth: 1,
-            },
-          ],
-        },
-        options: {
-          scales: {
-            yAxes: [
-              {
-                ticks: {
-                  beginAtZero: true,
-                },
-              },
-            ],
-          },
-        },
-      });
-    }
-  }, []);
-  return <canvas ref={ref} id="myChart" width="200" height="200"></canvas>;
+  return (
+    <div>
+      <div style={{ width: 400, height: 400 }}>
+        <ChartjsMultiLine />
+      </div>
+      <div style={{ width: 400, height: 400 }}>
+        <ChartjsLine />
+      </div>
+      <div style={{ width: 400, height: 400 }}>
+        <DoughnutChart />
+      </div>
+      <div style={{ width: 400, height: 400 }}>
+        <ChartjsMultiAxis />
+      </div>
+    </div>
+  );
 };
 export default Chartjs;

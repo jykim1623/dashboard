@@ -1,3 +1,5 @@
+import _ from "lodash";
+
 const firstBuckets = ({ responses }) => {
   const list = [];
   /**
@@ -22,7 +24,6 @@ const getSymbolList = (data, list = []) => {
       break;
     }
     if (typeof d[3][0] !== "undefined") {
-      console.log(typeof d[3][0]);
       const items = d[3][0].buckets;
       if (items.length) {
         for (const item of items) {
@@ -60,6 +61,13 @@ const getSymbolItems = (data, list = []) => {
 
 export const handleSeries = (data) => {
   const buckets = data[0].buckets;
+  // const symbols = getSymbolList(buckets);
+  // return { data: getSymbolItems(buckets), symbols };
+  return getSymbolItems(buckets);
+};
+
+export const handleSeriesVega = (data) => {
+  const buckets = data[0].buckets;
   const symbols = getSymbolList(buckets);
   return { data: getSymbolItems(buckets), symbols };
 };
@@ -71,4 +79,22 @@ export const handlePie = (data) => {
 
 export const generateAggtoAgg = (init) => {
   const buckets = firstBuckets(init);
+};
+
+const getSymbolItemsWithNull = (data, symbols, list = []) => {
+  const obj = {};
+  for (const a of symbols) {
+    obj[a] = {
+      key: a,
+      values: [],
+    };
+  }
+
+  return obj;
+};
+
+export const generateHighchartData = (items) => {
+  const buckets = items[0].buckets;
+  const symbols = getSymbolList(buckets);
+  // console.log(getSymbolItemsWithNull(buckets, symbols));
 };

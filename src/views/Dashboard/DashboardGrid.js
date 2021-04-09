@@ -2,6 +2,7 @@ import ReactGridLayout from "react-grid-layout";
 import classNames from "classnames";
 import Panel from "./DashboardPanel";
 import sizeMe from "react-sizeme";
+import { hot } from "react-hot-loader";
 
 let lastGridWidth = 1200;
 let ignoreNextWidthChange = false;
@@ -32,7 +33,7 @@ const GridWrapper = ({
       className={className}
       width={lastGridWidth}
       layout={layout}
-      cols={24}
+      cols={12}
       rowHeight={50}
       containerPadding={[0, 0]}
       isResizable={isResizable}
@@ -40,6 +41,7 @@ const GridWrapper = ({
       onDragStop={onDragStop}
       onResize={onResize}
       onResizeStop={onResizeStop}
+      useCSSTransforms={false}
     >
       {children}
     </ReactGridLayout>
@@ -99,17 +101,22 @@ const DashboardGrid = ({ dashboard, viewPanel }) => {
     return layout;
   };
 
+  const onDragStop = (a, b, c) => {
+    console.log(a, b, c);
+  };
+  const { isDraggable, isResizable } = dashboard;
   return (
     <SizedReactLayoutGrid
       className={classNames({ layout: true })}
       layout={buildLayout()}
-      isDraggable={false}
-      isResizable={false}
       viewPanel={viewPanel}
+      isDraggable={isDraggable}
+      isResizable={isResizable}
+      onDragStop={onDragStop}
     >
       {renderPanels()}
     </SizedReactLayoutGrid>
   );
 };
 
-export default DashboardGrid;
+export default hot(module)(DashboardGrid);
