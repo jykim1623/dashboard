@@ -6,6 +6,8 @@ import { DashboardModel } from "../../app/dashboard/DashboardModel";
 import DashboardPage from "./DashboardPage";
 import { useEffect } from "react";
 
+import _ from "lodash";
+
 const Dashboard = () => {
   const { search } = useLocation();
   const {
@@ -15,6 +17,10 @@ const Dashboard = () => {
 
   const [dashboard, setDashboard] = useState(null);
 
+  // const handleResize = _.throttle(() => {
+  //   console.log(window.innerWidth, window.innerHeight);
+  // }, 500);
+
   useEffect(() => {
     if (!id) {
       history.push(`/d/00000001`);
@@ -22,6 +28,12 @@ const Dashboard = () => {
     if (id) {
       history.push(`/d/${id}`);
     }
+
+    // window.addEventListener("resize", handleResize);
+
+    // return () => {
+    //   window.removeEventListener("resize", handleResize);
+    // };
   }, []);
 
   useEffect(() => {
@@ -30,7 +42,10 @@ const Dashboard = () => {
     }
   }, [id]);
   const handleToggle = (e) => {
-    const newDashboard = new DashboardModel({ ...dashboard, [e.target.name]: e.target.checked })
+    const newDashboard = new DashboardModel({
+      ...dashboard,
+      [e.target.name]: e.target.checked,
+    });
     setDashboard(newDashboard);
   };
   return (

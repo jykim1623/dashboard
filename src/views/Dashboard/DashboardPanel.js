@@ -1,16 +1,12 @@
 import { useHistory } from "react-router";
 import { VegaLite } from "react-vega";
 import { AutoSizer } from "react-virtualized";
-import { handleSeries } from "../../app/plugins/elastic.handler";
-import { vegaLiteSeriseSpec } from "../graphs/VegaLite/spec";
 // import Graph from "../Graph/Graph";
 
-import statusCode from "../../assets/jsons/statuscode.json";
-import bodySent from "../../assets/jsons/bodysent.json";
-import uv from "../../assets/jsons/uv.json";
 import classNames from "classnames";
 
 import ChartjsMultiLine from "../graphs/Chartjs/ChartjsMultiLine";
+import VegaChart from "../../components/Vega/VegaChart";
 
 const PanelCard = ({ panel, dashboard, clickTitle, width, height }) => {
   const { title, type, id, ...rest } = panel;
@@ -61,14 +57,7 @@ const PanelCard = ({ panel, dashboard, clickTitle, width, height }) => {
             style={{ padding: 0 }}
           >
             <div onClick={(e) => clickTitle(e, id)}>{title}</div>
-            <VegaLite
-              actions={false}
-              spec={panel.spec}
-              data={panel.data}
-              width={width - 50}
-              height={height - 61}
-              renderer={"canvas"}
-            />
+            <VegaChart panel={panel} width={width} height={height} />
           </div>
         )}
         {type === "logs" && (
@@ -97,6 +86,7 @@ const DashboardPanel = ({ panel, dashboard, isViewing }) => {
   const viewToPanel = (e, id) => {
     history.push(`?viewPanel=${id}`);
   };
+
   const renderPanel = () => {
     return (
       <AutoSizer>
@@ -109,8 +99,8 @@ const DashboardPanel = ({ panel, dashboard, isViewing }) => {
               <PanelCard
                 panel={panel}
                 dashboard={dashboard}
-                width={width}
-                height={height}
+                width={width - 30}
+                height={height - 40}
                 clickTitle={viewToPanel}
               />
             </div>

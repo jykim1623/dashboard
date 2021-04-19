@@ -5,6 +5,9 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 import "bootstrap/dist/js/bootstrap";
+import axios from 'axios';
+
+axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
 ReactDOM.render(
   <React.StrictMode>

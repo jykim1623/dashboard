@@ -7,10 +7,12 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.21.1",
     "bootstrap": "^5.0.0-beta1",
     "chart.js": "^2.9.4",
     "classnames": "^2.3.1",
     "d3": "^6.6.2",
+    "date-fns": "^2.21.0",
     "highcharts": "^9.0.1",
     "highcharts-react-official": "^3.0.0",
     "jquery": "^3.6.0",
@@ -21,6 +23,7 @@
     "react-dom": "^17.0.2",
     "react-grid-layout": "^1.2.4",
     "react-hot-loader": "^4.13.0",
+    "react-query": "^3.13.8",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-sizeme": "^3.0.1",
@@ -28,10 +31,11 @@
     "react-virtualized": "^9.22.3",
     "vega": "^5.20.2",
     "vega-lite": "^5.0.0",
+    "vega-tooltip": "^0.25.1",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "REACT_APP_API_URL=http://localhost:9000 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -53,5 +57,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:9000"
 }

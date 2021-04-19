@@ -91,6 +91,11 @@ const Header = () => {
                     highchart
                   </Link>
                 </li>
+                <li>
+                  <Link className="dropdown-item" to="/d/00000004">
+                    test request
+                  </Link>
+                </li>
               </ul>
             </li>
           </ul>

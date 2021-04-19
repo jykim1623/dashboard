@@ -7,9 +7,84 @@ import uv from "../../assets/jsons/uv.json";
 import top5 from "../../assets/jsons/uv.json";
 import session from "../../assets/jsons/session.json";
 import browser from "../../assets/jsons/browser.json";
-import { vegaErrorBand, vegaGeo, vegaHitmap, vegaThreshold } from "../graphs/VegaLite/spec";
+import {
+  vegaErrorBand,
+  vegaGeo,
+  vegaHitmap,
+  vegaThreshold,
+} from "../graphs/VegaChartPage/spec";
 
 export const dashboard = [
+  {
+    id: "00000004",
+    title: "requesttest",
+    label: "vega",
+    panelInView: true,
+    isResizable: false,
+    isDraggable: false,
+    panels: [
+      {
+        id: 1,
+        title: "request top 5",
+        gridPos: {
+          h: 5,
+          w: 4,
+          x: 0,
+          y: 0,
+        },
+        url: "top5",
+        type: "graph",
+        opt: {
+          legend: null,
+        },
+      },
+      {
+        id: 2,
+        title: "body sent",
+        gridPos: {
+          h: 5,
+          w: 4,
+          x: 4,
+          y: 0,
+        },
+        url: "requests",
+        type: "graph",
+        opt: {
+          legend: null,
+        },
+      },
+      {
+        id: 3,
+        title: "status Code",
+        gridPos: {
+          h: 7,
+          w: 12,
+          x: 0,
+          y: 5,
+        },
+        url: "bodysent",
+        type: "graph",
+        opt: {
+          legend: null,
+        },
+      },
+      {
+        id: 4,
+        title: "bodysenttraffic",
+        gridPos: {
+          h: 7,
+          w: 12,
+          x: 0,
+          y: 5,
+        },
+        url: "bodysenttraffic",
+        type: "graph",
+        opt: {
+          legend: null,
+        },
+      },
+    ],
+  },
   {
     id: "00000001",
     title: "chartjs",
