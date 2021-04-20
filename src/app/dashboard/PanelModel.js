@@ -1,4 +1,8 @@
 import axios from "axios";
+import VegaChart from "../../components/Vega/VegaChart";
+import VegaRenderer from "../../components/Vega/VegaRenderer";
+import { initializeAgg } from "../plugins/elastic.handler";
+import { receiveVegaKinds } from "../plugins/vega.handler";
 
 export class PanelModel {
   constructor(data) {
@@ -12,73 +16,56 @@ export class PanelModel {
     this.tooltip = data.tooltip;
     this.spec = data.spec;
     this.opt = data.opt || null;
+    this.url = data.url;
+    this.time = data.time;
+    this.kinds = data.kinds;
+    // this.init(data.url);
+    this.getSpec();
+  }
 
-    this.fetchingData(data.url);
+  setSpec(data) {
+    const newSpec = { ...receiveVegaKinds(this.kinds) };
+    newSpec.data.values = data;
   }
 
   async fetchingData(url) {
-    const { data } = await axios.get(`/elastic/real/_${url}`);
-    this.insertLineSpec();
-    this.convertData(data);
-  }
-
-  convertData(d) {
-    const data = d;
-    this.data = data;
-  }
-
-  setData(data) {
-    this.data = data;
-  }
-
-  getData() {
-    return this.data;
-  }
-
-  insertLineSpec(opt) {
-    const spec = {
-      $schema: "https://vega.github.io/schema/vega-lite/v5.json",
-      description: "line graph",
-      data: { values: this.data },
-      mark: {
-        type: "area",
-        line: true,
-      },
-      encoding: {
-        x: { field: "date", type: "temporal", title: null },
-        y: { field: "value", type: "quantitative", title: null },
-        color: { field: "symbol", type: "nominal", legend: null },
-      },
-    };
-
-    if (!opt?.xAxis) {
-      this.spec = {
-        ...spec,
-        encoding: { ...spec.encoding, x: { ...spec.encoding.x, axis: null } },
-      };
+    const params = {};
+    if (this.time) {
+      params.from = new Date(this.time.from).getTime();
+      params.to = new Date(this.time.to).getTime();
     }
-    if (!opt?.yAxis) {
-      this.spec = {
-        ...spec,
-        encoding: { ...spec.encoding, y: { ...spec.encoding.y, axis: null } },
-      };
-    }
+    const { data } = await axios.get(`/elastic/real/_${url}`, {
+      params,
+    });
+    const items = initializeAgg(data.body.aggregations, this.kinds);
+    // this[`${this.kinds}InsertSpec`](items, this.opt);
+    // console.log(items);
+    // this[`lineInsertSpec`](items, this.opt);
 
-    if (!opt?.legend) {
-      this.spec = {
-        ...spec,
-        encoding: {
-          ...spec.encoding,
-          color: { ...spec.encoding.color, legend: opt?.legend },
-        },
-      };
-    }
-    this.spec = spec;
+    // const abc =
+    // console.log(abc);
   }
 
-  insertPieSpec() {}
+  getSpec() {
+    this.spec = receiveVegaKinds(this.kinds);
+  }
 
   setIsViewing(isViewing) {
     this.isViewing = isViewing;
+  }
+
+  render(width, height) {
+    return (
+      <VegaChart
+        spec={this.spec}
+        width={width - 50}
+        height={height - 40}
+        render="svg"
+      />
+    );
+  }
+
+  init(url) {
+    this.fetchingData(url);
   }
 }

@@ -7,11 +7,16 @@ import classNames from "classnames";
 
 import ChartjsMultiLine from "../graphs/Chartjs/ChartjsMultiLine";
 import VegaChart from "../../components/Vega/VegaChart";
+import { useContext, useEffect, useRef, useState } from "react";
+import { useAsyncFn } from "react-use";
+import axios from "axios";
+import DashboardContext from "../../app/contexts/DashboardContext";
+import { initializeAgg } from "../../app/plugins/elastic.handler";
+import VegaChartLoading from "../../components/Vega/VegaChartLoading";
 
-const PanelCard = ({ panel, dashboard, clickTitle, width, height }) => {
+const PanelCard = ({ panel, dashboard, clickTitle, width, height, data }) => {
   const { title, type, id, ...rest } = panel;
   const { label } = dashboard;
-
   if (label === "chartjs") {
     return (
       <div className={classNames("card", "panel-container")}>
@@ -57,7 +62,13 @@ const PanelCard = ({ panel, dashboard, clickTitle, width, height }) => {
             style={{ padding: 0 }}
           >
             <div onClick={(e) => clickTitle(e, id)}>{title}</div>
-            <VegaChart panel={panel} width={width} height={height} />
+            <VegaChart
+              panel={panel}
+              width={width}
+              height={height}
+              data={data}
+            />
+            {/* {panel.render(width, height)} */}
           </div>
         )}
         {type === "logs" && (
@@ -81,13 +92,21 @@ const PanelCard = ({ panel, dashboard, clickTitle, width, height }) => {
   return <div>No data</div>;
 };
 
+const getES = async (url, params) => {
+  const { data } = await axios.get(`/elastic/real/_${url}`, {
+    params,
+  });
+  return data;
+};
+
 const DashboardPanel = ({ panel, dashboard, isViewing }) => {
+  const dashboardOption = useContext(DashboardContext);
+  const panelRef = useRef(null);
   const history = useHistory();
   const viewToPanel = (e, id) => {
     history.push(`?viewPanel=${id}`);
   };
-
-  const renderPanel = () => {
+  const renderPanel = (data) => {
     return (
       <AutoSizer>
         {({ width, height }) => {
@@ -99,9 +118,10 @@ const DashboardPanel = ({ panel, dashboard, isViewing }) => {
               <PanelCard
                 panel={panel}
                 dashboard={dashboard}
-                width={width - 30}
-                height={height - 40}
+                width={width - 50}
+                height={height - 60}
                 clickTitle={viewToPanel}
+                data={data}
               />
             </div>
           );
@@ -115,7 +135,31 @@ const DashboardPanel = ({ panel, dashboard, isViewing }) => {
     "panel-wrapper--view": isViewing,
   });
 
-  return <div className={classNames(panelWrapperClass)}>{renderPanel()}</div>;
+  const [loading, setLoading] = useState(true);
+  const [okData, setOkData] = useState(null);
+  const [, fetchEs] = useAsyncFn((url, time) => getES(url, time));
+  useEffect(() => {
+    const time = {
+      from: new Date(dashboardOption.from).getTime(),
+      to: new Date(dashboardOption.to).getTime(),
+    };
+
+    fetchEs(panel.url, time).then((o) => {
+      try {
+        setOkData(initializeAgg(o.body.aggregations, panel.kinds));
+      } catch (error) {
+        setOkData(null);
+      }
+      setLoading(false);
+    });
+    // console.log(dashboardOption, panel, panelRef.current);
+  }, [dashboardOption]);
+  return (
+    <div ref={panelRef} className={classNames(panelWrapperClass)}>
+      {loading && <VegaChartLoading />}
+      {!loading && renderPanel(okData)}
+    </div>
+  );
 };
 
 export default DashboardPanel;
