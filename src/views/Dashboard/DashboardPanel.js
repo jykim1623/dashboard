@@ -13,6 +13,7 @@ import axios from "axios";
 import DashboardContext from "../../app/contexts/DashboardContext";
 import { initializeAgg } from "../../app/plugins/elastic.handler";
 import VegaChartLoading from "../../components/Vega/VegaChartLoading";
+import { Suspense } from "react";
 
 const PanelCard = ({ panel, dashboard, clickTitle, width, height, data }) => {
   const { title, type, id, ...rest } = panel;
@@ -93,8 +94,11 @@ const PanelCard = ({ panel, dashboard, clickTitle, width, height, data }) => {
 };
 
 const getES = async (url, params) => {
-  const { data } = await axios.get(`/elastic/real/_${url}`, {
-    params,
+  const { data } = await axios.get(`/elastic/real/${params.service}/_${url}`, {
+    params: {
+      from: params.from,
+      to: params.to,
+    },
   });
   return data;
 };
@@ -137,14 +141,15 @@ const DashboardPanel = ({ panel, dashboard, isViewing }) => {
 
   const [loading, setLoading] = useState(true);
   const [okData, setOkData] = useState(null);
-  const [, fetchEs] = useAsyncFn((url, time) => getES(url, time));
+  const [, fetchEs] = useAsyncFn((url, option) => getES(url, option));
   useEffect(() => {
-    const time = {
+    const option = {
+      service: dashboardOption.service,
       from: new Date(dashboardOption.from).getTime(),
       to: new Date(dashboardOption.to).getTime(),
     };
 
-    fetchEs(panel.url, time).then((o) => {
+    fetchEs(panel.url, option).then((o) => {
       try {
         setOkData(initializeAgg(o.body.aggregations, panel.kinds));
       } catch (error) {
@@ -155,10 +160,11 @@ const DashboardPanel = ({ panel, dashboard, isViewing }) => {
     // console.log(dashboardOption, panel, panelRef.current);
   }, [dashboardOption]);
   return (
-    <div ref={panelRef} className={classNames(panelWrapperClass)}>
-      {loading && <VegaChartLoading />}
-      {!loading && renderPanel(okData)}
-    </div>
+    <Suspense fallback={<VegaChartLoading />}>
+      <div ref={panelRef} className={classNames(panelWrapperClass)}>
+        {renderPanel(okData)}
+      </div>
+    </Suspense>
   );
 };
 

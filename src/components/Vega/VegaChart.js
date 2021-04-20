@@ -13,10 +13,7 @@ const VegaChart = ({ panel, width, height, data }) => {
   // console.log(panel.spec, data);
   const newSpec = { ...panel.spec, data: { values: data } };
   return (
-    <Suspense fallback={<VegaChartLoading />}>
-      <VegaRenderer spec={newSpec} width={width} height={height} render="svg" />
-      {/* <div>Loading...</div> */}
-    </Suspense>
+    <VegaRenderer spec={newSpec} width={width} height={height} render="svg" />
   );
 };
 

@@ -58,6 +58,10 @@ const Dashboard = () => {
     }
   }, [option.from, option.to]);
 
+  const handleService = (e) => {
+    setOption({ ...option, service: e.target.value });
+  };
+
   const handleTime = (e) => {
     setOption({ ...option, [e.target.name]: e.target.value });
   };
@@ -107,9 +111,10 @@ const Dashboard = () => {
             </div>
             <div>
               <label htmlFor="service">service(준비중)</label>
-              <select id="service">
-                <option value="genie">genie</option>
+              <select id="service" onChange={handleService}>
                 <option value="h123">h123</option>
+                <option value="genie">genie</option>
+                <option value="geniecache">geniecache</option>
               </select>
             </div>
           </div>
