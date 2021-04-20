@@ -98,3 +98,73 @@ export const generateHighchartData = (items) => {
   const symbols = getSymbolList(buckets);
   // console.log(getSymbolItemsWithNull(buckets, symbols));
 };
+
+/********************************************************************
+ *                 new es data convert process                      *
+ ********************************************************************/
+
+// buckets에 들어있는 리스트를 처리함
+const solveBucketsArray = (buckets, list = []) => {
+  try {
+    for (const bucket of buckets) {
+      const bk = bucket["1"];
+      const data = { value: bk.value, date: bucket.key };
+      // if (bk.hasOwnProperty("key")) {
+      //   data.key = bk.key;
+      // }
+      list.push(data);
+    }
+    return list;
+  } catch (error) {
+    return [];
+  }
+};
+
+const solveBucketsObject = (buckets, list = []) => {
+  const item = [];
+  for (const bucket in buckets) {
+    item = [...solveBucketsArray(bucket)];
+    list.push(item);
+  }
+
+  return list;
+};
+
+const checkBucketInner = (buckets) => {
+  // console.log(typeof buckets[0]);
+  // if (typeof buckets[0] !== "object") {
+  //   return solveBucketsObject(buckets);
+  // }
+  return solveBucketsArray(buckets);
+};
+
+export const initializeAgg = (aggs, kinds) => {
+  if (kinds === "line") {
+    let result = [];
+    for (const agg in aggs["4"]) {
+      if (agg === "buckets") {
+        result = checkBucketInner(aggs["4"][agg]);
+      }
+    }
+    // console.log(result);
+    return result;
+  }
+
+  if (kinds === "pie") {
+    let result = [];
+    for (const agg in aggs["4"]) {
+      const buckets = aggs["4"][agg].buckets;
+      if (buckets) {
+        buckets.map((bucket) => {
+          result.push({
+            value: bucket["1"].value,
+            symbol: bucket.key,
+          });
+        });
+      } else {
+        break;
+      }
+    }
+    return result;
+  }
+};

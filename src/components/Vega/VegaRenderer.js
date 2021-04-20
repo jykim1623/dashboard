@@ -16,6 +16,7 @@ const VegaRenderer = ({
 }) => {
   const renderRef = useRef(null);
   useEffect(() => {
+    // console.log(renderRef.current, spec);
     if (!spec) {
       return;
     }

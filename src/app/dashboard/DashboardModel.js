@@ -33,6 +33,10 @@ export class DashboardModel {
     });
   }
 
+  handleBrush(a) {
+    console.log(a);
+  }
+
   getPanelById(id) {
     return this.panels.find((panel) => panel.id === id);
   }
@@ -43,5 +47,13 @@ export class DashboardModel {
   exitViewPanel(panel) {
     this.panelInView = undefined;
     panel.setIsViewing(false);
+  }
+
+  changeTime(time) {
+    this.time = time;
+    this.panels = _.map(this.panels || [], (panelData) => {
+      panelData.time = { ...time };
+      return new PanelModel(panelData);
+    });
   }
 }

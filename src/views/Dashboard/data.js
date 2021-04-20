@@ -27,8 +27,8 @@ export const dashboard = [
         id: 1,
         title: "request top 5",
         gridPos: {
+          w: 6,
           h: 5,
-          w: 4,
           x: 0,
           y: 0,
         },
@@ -37,14 +37,15 @@ export const dashboard = [
         opt: {
           legend: null,
         },
+        kinds: "line",
       },
       {
         id: 2,
         title: "body sent",
         gridPos: {
+          w: 6,
           h: 5,
-          w: 4,
-          x: 4,
+          x: 6,
           y: 0,
         },
         url: "requests",
@@ -52,29 +53,31 @@ export const dashboard = [
         opt: {
           legend: null,
         },
+        kinds: "line",
       },
       {
         id: 3,
         title: "status Code",
         gridPos: {
-          h: 7,
           w: 12,
+          h: 5,
           x: 0,
-          y: 5,
+          y: 11,
         },
         url: "bodysent",
         type: "graph",
         opt: {
           legend: null,
         },
+        kinds: "line",
       },
       {
         id: 4,
         title: "bodysenttraffic",
         gridPos: {
-          h: 7,
-          w: 12,
-          x: 0,
+          w: 5,
+          h: 4,
+          x: 5,
           y: 5,
         },
         url: "bodysenttraffic",
@@ -82,6 +85,103 @@ export const dashboard = [
         opt: {
           legend: null,
         },
+        kinds: "line",
+      },
+      {
+        id: 5,
+        title: "uv",
+        gridPos: {
+          h: 6,
+          w: 6,
+          x: 6,
+          y: 15,
+        },
+        url: "uv",
+        type: "graph",
+        opt: {
+          legend: null,
+        },
+        kinds: "line",
+      },
+      {
+        id: 6,
+        title: "session",
+        gridPos: {
+          h: 6,
+          w: 6,
+          x: 0,
+          y: 15,
+        },
+        url: "session",
+        type: "graph",
+        opt: {
+          legend: null,
+        },
+        kinds: "line",
+      },
+      {
+        id: 7,
+        title: "referer",
+        gridPos: {
+          w: 7,
+          h: 6,
+          x: 0,
+          y: 21,
+        },
+        url: "referer",
+        type: "graph",
+        opt: {
+          legend: null,
+        },
+        kinds: "pie",
+      },
+      {
+        id: 8,
+        title: "os",
+        gridPos: {
+          w: 3,
+          h: 6,
+          x: 0,
+          y: 27,
+        },
+        url: "os",
+        type: "graph",
+        opt: {
+          legend: null,
+        },
+        kinds: "pie",
+      },
+      {
+        id: 9,
+        title: "browser",
+        gridPos: {
+          w: 3,
+          h: 6,
+          x: 3,
+          y: 27,
+        },
+        url: "browser",
+        type: "graph",
+        opt: {
+          legend: null,
+        },
+        kinds: "pie",
+      },
+      {
+        id: 10,
+        title: "device",
+        gridPos: {
+          w: 3,
+          h: 6,
+          x: 6,
+          y: 27,
+        },
+        url: "device",
+        type: "graph",
+        opt: {
+          legend: null,
+        },
+        kinds: "pie",
       },
     ],
   },
