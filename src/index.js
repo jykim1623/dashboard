@@ -7,7 +7,8 @@ import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/js/bootstrap";
 import axios from 'axios';
 
-axios.defaults.baseURL = process.env.REACT_APP_API_URL;
+// axios.defaults.baseURL = process.env.REACT_APP_API_URL;
+axios.defaults.baseURL = 'http://192.168.120.184:4000';
 
 ReactDOM.render(
   <React.StrictMode>
