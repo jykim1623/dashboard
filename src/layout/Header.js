@@ -77,6 +77,11 @@ const Header = () => {
               </Link>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
+                  <Link className="dropdown-item" to="/d/00000005">
+                    piece of Chart
+                  </Link>
+                </li>
+                <li>
                   <Link className="dropdown-item" to="/d/00000001">
                     chartjs
                   </Link>

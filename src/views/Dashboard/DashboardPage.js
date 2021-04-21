@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { useRouteMatch, useLocation } from "react-router";
 import DashboardGrid from "./DashboardGrid";
 
-const DashboardPage = ({ dashboard }) => {
+const DashboardPage = ({ dashboard, handleRange }) => {
   const location = useLocation();
   const params = useRouteMatch();
 
@@ -48,7 +48,11 @@ const DashboardPage = ({ dashboard }) => {
 
   return (
     <div className="dashboard-container">
-      <DashboardGrid dashboard={dashboard} viewPanel={viewPanel} />
+      <DashboardGrid
+        dashboard={dashboard}
+        viewPanel={viewPanel}
+        handleRange={handleRange}
+      />
     </div>
   );
 };

@@ -2,7 +2,8 @@ import axios from "axios";
 import VegaChart from "../../components/Vega/VegaChart";
 import VegaRenderer from "../../components/Vega/VegaRenderer";
 import { initializeAgg } from "../plugins/elastic.handler";
-import { receiveVegaKinds } from "../plugins/vega.handler";
+import { receiveVegaKinds, generateSpec } from "../plugins/vega.handler";
+import { byteCalculation, priceToString } from "../utils/util.string";
 
 export class PanelModel {
   constructor(data) {
@@ -11,16 +12,27 @@ export class PanelModel {
     // this.isViewing = !data.isViewing || false;
     this.title = data.title;
     this.type = data.type;
-    this.xaxis = data.xaxis;
-    this.yaxis = data.yaxis;
     this.tooltip = data.tooltip;
     this.spec = data.spec;
     this.opt = data.opt || null;
     this.url = data.url;
     this.time = data.time;
     this.kinds = data.kinds;
+    this.vega = data.vega;
+    this.fieldConfig = data.fieldConfig;
     // this.init(data.url);
     this.getSpec();
+  }
+
+  getSum(sum) {
+    const { unit } = this.fieldConfig;
+    if (unit == "bytes") {
+      return byteCalculation(sum);
+    }
+    if(unit === 'locales'){
+      return priceToString(sum);
+    }
+    return sum;
   }
 
   setSpec(data) {
@@ -47,7 +59,8 @@ export class PanelModel {
   }
 
   getSpec() {
-    this.spec = receiveVegaKinds(this.kinds);
+    this.spec = generateSpec(this.kinds, this.vega);
+    // this.spec = receiveVegaKinds(this.kinds);
   }
 
   setIsViewing(isViewing) {

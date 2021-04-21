@@ -50,7 +50,7 @@ const GridWrapper = ({
 
 const SizedReactLayoutGrid = sizeMe({ monitorWidth: true })(GridWrapper);
 
-const DashboardGrid = ({ dashboard, viewPanel }) => {
+const DashboardGrid = ({ dashboard, viewPanel, handleRange }) => {
   const panelMap = {};
 
   const renderPanels = () => {
@@ -73,7 +73,12 @@ const DashboardGrid = ({ dashboard, viewPanel }) => {
 
   const renderPanel = (panel) => {
     return (
-      <Panel panel={panel} dashboard={dashboard} isViewing={panel.isViewing} />
+      <Panel
+        panel={panel}
+        dashboard={dashboard}
+        isViewing={panel.isViewing}
+        handleRange={handleRange}
+      />
     );
   };
 

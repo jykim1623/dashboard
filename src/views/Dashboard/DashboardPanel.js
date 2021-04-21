@@ -15,7 +15,15 @@ import { initializeAgg } from "../../app/plugins/elastic.handler";
 import VegaChartLoading from "../../components/Vega/VegaChartLoading";
 import { Suspense } from "react";
 
-const PanelCard = ({ panel, dashboard, clickTitle, width, height, data }) => {
+const PanelCard = ({
+  panel,
+  dashboard,
+  clickTitle,
+  width,
+  height,
+  data,
+  handleRange,
+}) => {
   const { title, type, id, ...rest } = panel;
   const { label } = dashboard;
   if (label === "chartjs") {
@@ -63,12 +71,37 @@ const PanelCard = ({ panel, dashboard, clickTitle, width, height, data }) => {
             style={{ padding: 0 }}
           >
             <div onClick={(e) => clickTitle(e, id)}>{title}</div>
-            <VegaChart
-              panel={panel}
-              width={width}
-              height={height}
-              data={data}
-            />
+            <div
+              style={{
+                position: "relative",
+                display: "table",
+                width: "100%",
+                height: "100%",
+              }}
+            >
+              {panel.fieldConfig && (
+                <div
+                  style={{
+                    display: "table-cell",
+                    verticalAlign: "middle",
+                    textAlign: "center",
+                    position: "relative",
+                    zIndex: 100,
+                  }}
+                >
+                  <span style={{ fontSize: 30.4 }}>
+                    {panel.getSum(data.sum)}
+                  </span>
+                </div>
+              )}
+              <VegaChart
+                panel={panel}
+                width={width}
+                height={height}
+                data={data}
+                handleRange={handleRange}
+              />
+            </div>
             {/* {panel.render(width, height)} */}
           </div>
         )}
@@ -103,7 +136,7 @@ const getES = async (url, params) => {
   return data;
 };
 
-const DashboardPanel = ({ panel, dashboard, isViewing }) => {
+const DashboardPanel = ({ panel, dashboard, isViewing, handleRange }) => {
   const dashboardOption = useContext(DashboardContext);
   const panelRef = useRef(null);
   const history = useHistory();
@@ -126,6 +159,7 @@ const DashboardPanel = ({ panel, dashboard, isViewing }) => {
                 height={height - 60}
                 clickTitle={viewToPanel}
                 data={data}
+                handleRange={handleRange}
               />
             </div>
           );
@@ -162,7 +196,7 @@ const DashboardPanel = ({ panel, dashboard, isViewing }) => {
   return (
     <Suspense fallback={<VegaChartLoading />}>
       <div ref={panelRef} className={classNames(panelWrapperClass)}>
-        {renderPanel(okData)}
+        {!loading && renderPanel(okData)}
       </div>
     </Suspense>
   );

@@ -106,15 +106,17 @@ export const generateHighchartData = (items) => {
 // buckets에 들어있는 리스트를 처리함
 const solveBucketsArray = (buckets, list = []) => {
   try {
+    let sum = 0;
     for (const bucket of buckets) {
       const bk = bucket["1"];
       const data = { value: bk.value, date: bucket.key };
       // if (bk.hasOwnProperty("key")) {
       //   data.key = bk.key;
       // }
+      sum += bk.value;
       list.push(data);
     }
-    return list;
+    return { sum, list };
   } catch (error) {
     return [];
   }
@@ -143,10 +145,24 @@ export const initializeAgg = (aggs, kinds) => {
     let result = [];
     for (const agg in aggs["4"]) {
       if (agg === "buckets") {
-        result = checkBucketInner(aggs["4"][agg]);
+        const buckets = aggs["4"][agg];
+        if (buckets[0].hasOwnProperty("1")) {
+          result = checkBucketInner(aggs["4"][agg]);
+        }
+        if (buckets[0].hasOwnProperty("3")) {
+          for (const bucket of buckets) {
+            bucket["3"]["0"].buckets.map((b) => {
+              result.push({
+                value: b["1"].value,
+                symbol: b.key,
+                date: bucket.key,
+              });
+            });
+          }
+          result = { list: result };
+        }
       }
     }
-    // console.log(result);
     return result;
   }
 
@@ -165,6 +181,6 @@ export const initializeAgg = (aggs, kinds) => {
         break;
       }
     }
-    return result;
+    return { list: result };
   }
 };

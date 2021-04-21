@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useRef } from "react";
 import { parse, View, Warn } from "vega";
 import { compile } from "vega-lite";
@@ -21,13 +21,12 @@ const VegaRenderer = ({
       return;
     }
     const vgSpec = compile(spec).spec;
-
     const view = new View(parse(vgSpec))
       .logLevel(Warn)
       .renderer(render)
       .width(width)
       .height(height)
-      .tooltip(new Handler().call)
+      .tooltip(new Handler({ theme: "dark" }).call)
       .initialize(renderRef.current);
 
     if (typeof handleRangeCallback !== "undefined") {
@@ -49,7 +48,7 @@ const VegaRenderer = ({
     };
   }, [spec, width, height]);
 
-  return <div ref={renderRef}></div>;
+  return <div ref={renderRef} style={{ position: "absolute", left: 0 }}></div>;
 };
 
 export default VegaRenderer;

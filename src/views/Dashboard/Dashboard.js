@@ -73,6 +73,11 @@ const Dashboard = () => {
     });
     setDashboard(newDashboard);
   };
+
+  const handleRangeArea = (time) => {
+    console.log(time);
+  };
+
   return (
     <DashboardContext.Provider value={option}>
       {!dashboard && <div>loading...</div>}
@@ -118,7 +123,7 @@ const Dashboard = () => {
               </select>
             </div>
           </div>
-          <DashboardPage dashboard={dashboard} />
+          <DashboardPage dashboard={dashboard} handleRange={handleRangeArea} />
         </>
       )}
     </DashboardContext.Provider>
