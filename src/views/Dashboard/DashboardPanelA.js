@@ -25,7 +25,7 @@ const DashboardPanelA = ({ data, width, height, panel, handleRange }) => {
               <Panel
                 key={index}
                 width={width / length - 10}
-                height={height}
+                height={height / (data.type === 5 ? 2 : 1)}
                 data={l}
                 type={data.type}
               />
@@ -48,36 +48,55 @@ const Panel = ({ width, height, data, type, handleRange }) => {
         height: "calc(100% - 24px)",
       }}
     >
-      {data?.sum && <PanelInfo data={data} type={type} />}
-      <VegaChart
-        panel={panelContext}
-        width={width}
-        height={height}
-        data={data}
-        handleRange={handleRange}
-      />
+      {data?.sum && (
+        <PanelInfo data={data} type={type} width={width} height={height} />
+      )}
+      <div
+        style={{
+          position: "absolute",
+          left: 0,
+          top: type === 5 ? "calc(100% /2)" : 0,
+        }}
+      >
+        <VegaChart
+          panel={panelContext}
+          width={width}
+          height={height}
+          data={data}
+          handleRange={handleRange}
+        />
+      </div>
     </div>
   );
 };
 
-const PanelInfo = ({ data, type }) => {
+const PanelInfo = ({ data, type, width, height }) => {
   const panelContext = useContext(PanelContext);
   return (
     <div
       style={{
         display: "table-cell",
-        verticalAlign: "middle",
+        verticalAlign: type === 5 ? "" : "middle",
         textAlign: "center",
         position: "relative",
         zIndex: 100,
+        width: "100%",
       }}
     >
       {type === 5 && (
         <div style={{ position: "absolute", top: 0, left: 20 }}>{data.key}</div>
       )}
-      <span style={{ fontSize: type === 5 ? 20 : 30.4 }}>
+      <div
+        style={{
+          position: type === 5 ? "absolute" : "relative",
+          fontSize: type === 5 ? 17 : 30.4,
+          top: type === 5 ? 30 : 0,
+          width,
+          height,
+        }}
+      >
         {panelContext.getSum(data.sum)}
-      </span>
+      </div>
     </div>
   );
 };

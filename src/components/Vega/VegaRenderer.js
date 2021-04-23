@@ -61,7 +61,7 @@ const VegaRenderer = ({
     };
   }, [spec, width, height]);
 
-  return <div ref={renderRef} style={{ position: "absolute", left: 0 }}></div>;
+  return <div ref={renderRef}></div>;
 };
 
 export default VegaRenderer;
