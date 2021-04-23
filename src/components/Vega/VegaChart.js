@@ -12,11 +12,12 @@ const VegaChart = ({ panel, width, height, data, handleRange }) => {
   const newSpec = { ...panel.spec, data: { values: data.list } };
   return (
     <VegaRenderer
+      panel={panel}
       spec={newSpec}
       width={width}
       height={height}
       render="svg"
-      handleRange={handleRange}
+      handleRangeCallback={handleRange}
     />
   );
 };

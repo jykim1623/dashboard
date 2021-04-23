@@ -1,8 +1,11 @@
 import ReactGridLayout from "react-grid-layout";
 import classNames from "classnames";
-import Panel from "./DashboardPanel";
 import sizeMe from "react-sizeme";
 import { hot } from "react-hot-loader";
+import { lazy, Suspense } from "react";
+import VegaChartLoading from "../../components/Vega/VegaChartLoading";
+
+const Panel = lazy(() => import("./DashboardPanel"));
 
 let lastGridWidth = 1200;
 let ignoreNextWidthChange = false;
@@ -63,7 +66,11 @@ const DashboardGrid = ({ dashboard, viewPanel, handleRange }) => {
       const id = panel.id.toString();
       // panel.isInView =
       panelElements.push(
-        <div key={panel.id} className={panelClasses} id={`panel-${id}`}>
+        <div
+          key={`${panel.id}`}
+          className={panelClasses}
+          id={`panel-${id}-${panel.estype}-${panel.title}`}
+        >
           {renderPanel(panel)}
         </div>
       );
@@ -111,16 +118,18 @@ const DashboardGrid = ({ dashboard, viewPanel, handleRange }) => {
   };
   const { isDraggable, isResizable } = dashboard;
   return (
-    <SizedReactLayoutGrid
-      className={classNames({ layout: true })}
-      layout={buildLayout()}
-      viewPanel={viewPanel}
-      isDraggable={isDraggable}
-      isResizable={isResizable}
-      onDragStop={onDragStop}
-    >
-      {renderPanels()}
-    </SizedReactLayoutGrid>
+    <Suspense fallback={<VegaChartLoading />}>
+      <SizedReactLayoutGrid
+        className={classNames({ layout: true })}
+        layout={buildLayout()}
+        viewPanel={viewPanel}
+        isDraggable={isDraggable}
+        isResizable={isResizable}
+        onDragStop={onDragStop}
+      >
+        {renderPanels()}
+      </SizedReactLayoutGrid>
+    </Suspense>
   );
 };
 

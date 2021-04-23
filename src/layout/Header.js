@@ -25,7 +25,7 @@ const Header = () => {
                 Home
               </Link>
             </li>
-            <li className="nav-item dropdown">
+            {/* <li className="nav-item dropdown">
               <Link
                 className="nav-link dropdown-toggle"
                 href="#"
@@ -57,13 +57,13 @@ const Header = () => {
                     High Chart
                   </Link>
                 </li>
-                {/* <li>
+                <li>
                   <Link className="dropdown-item" to="/graph/d3js">
                     d3js
                   </Link>
-                </li> */}
+                </li>
               </ul>
-            </li>
+            </li> */}
             <li className="nav-item dropdown">
               <Link
                 className="nav-link dropdown-toggle"
@@ -77,11 +77,16 @@ const Header = () => {
               </Link>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
-                  <Link className="dropdown-item" to="/d/00000005">
-                    piece of Chart
+                  <Link className="dropdown-item" to="/d/00000006">
+                    Telco Stat
                   </Link>
                 </li>
                 <li>
+                  <Link className="dropdown-item" to="/d/00000005">
+                    Service Stat
+                  </Link>
+                </li>
+                {/* <li>
                   <Link className="dropdown-item" to="/d/00000001">
                     chartjs
                   </Link>
@@ -100,7 +105,7 @@ const Header = () => {
                   <Link className="dropdown-item" to="/d/00000004">
                     test request
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </li>
           </ul>

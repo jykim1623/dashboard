@@ -7,6 +7,7 @@ import { Handler } from "vega-tooltip";
 import _ from "lodash";
 
 const VegaRenderer = ({
+  panel,
   spec,
   render = "canvas",
   handleRangeCallback,
@@ -20,17 +21,24 @@ const VegaRenderer = ({
     if (!spec) {
       return;
     }
+
+    const tooltipHandler = new Handler({ theme: "dark" }, true).call;
     const vgSpec = compile(spec).spec;
     const view = new View(parse(vgSpec))
       .logLevel(Warn)
       .renderer(render)
       .width(width)
       .height(height)
-      .tooltip(new Handler({ theme: "dark" }).call)
+      .tooltip(tooltipHandler)
       .initialize(renderRef.current);
 
-    if (typeof handleRangeCallback !== "undefined") {
-      view.addSignalListener("range", handleRangeCallback);
+    if (panel.kinds === "line" && typeof handleRangeCallback !== "undefined") {
+      try {
+        view.addSignalListener(
+          "lineTimeBrush",
+          _.debounce(handleRangeCallback, 300)
+        );
+      } catch (error) {}
     }
     if (typeof handleLegendClickCallback !== "undefined") {
       view.addSignalListener("legendclick", handleLegendClickCallback);
@@ -39,8 +47,13 @@ const VegaRenderer = ({
     view.runAsync();
 
     return () => {
-      if (typeof handleRangeCallback !== "undefined") {
-        view.removeSignalListener("range", handleRangeCallback);
+      if (
+        panel.kinds === "line" &&
+        typeof handleRangeCallback !== "undefined"
+      ) {
+        try {
+          view.removeSignalListener("lineTimeBrush", handleRangeCallback);
+        } catch (error) {}
       }
       if (typeof handleLegendClickCallback !== "undefined") {
         view.removeSignalListener("legendclick", handleLegendClickCallback);

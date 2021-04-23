@@ -1,19 +1,16 @@
 import { useHistory } from "react-router";
-import { VegaLite } from "react-vega";
 import { AutoSizer } from "react-virtualized";
 // import Graph from "../Graph/Graph";
 
 import classNames from "classnames";
 
 import ChartjsMultiLine from "../graphs/Chartjs/ChartjsMultiLine";
-import VegaChart from "../../components/Vega/VegaChart";
 import { useContext, useEffect, useRef, useState } from "react";
 import { useAsyncFn } from "react-use";
 import axios from "axios";
 import DashboardContext from "../../app/contexts/DashboardContext";
 import { initializeAgg } from "../../app/plugins/elastic.handler";
-import VegaChartLoading from "../../components/Vega/VegaChartLoading";
-import { Suspense } from "react";
+import DashboardPanelA from "./DashboardPanelA";
 
 const PanelCard = ({
   panel,
@@ -70,38 +67,16 @@ const PanelCard = ({
             className={classNames("card-body", "panel-content")}
             style={{ padding: 0 }}
           >
-            <div onClick={(e) => clickTitle(e, id)}>{title}</div>
-            <div
-              style={{
-                position: "relative",
-                display: "table",
-                width: "100%",
-                height: "100%",
-              }}
-            >
-              {panel.fieldConfig && (
-                <div
-                  style={{
-                    display: "table-cell",
-                    verticalAlign: "middle",
-                    textAlign: "center",
-                    position: "relative",
-                    zIndex: 100,
-                  }}
-                >
-                  <span style={{ fontSize: 30.4 }}>
-                    {panel.getSum(data.sum)}
-                  </span>
-                </div>
-              )}
-              <VegaChart
-                panel={panel}
-                width={width}
-                height={height}
-                data={data}
-                handleRange={handleRange}
-              />
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <div>{title}</div>
             </div>
+            <DashboardPanelA
+              width={width}
+              height={height}
+              data={data}
+              panel={panel}
+              handleRange={handleRange}
+            />
             {/* {panel.render(width, height)} */}
           </div>
         )}
@@ -127,7 +102,7 @@ const PanelCard = ({
 };
 
 const getES = async (url, params) => {
-  const { data } = await axios.get(`/elastic/real/${params.service}/_${url}`, {
+  const { data } = await axios.get(`/elastic/${url}`, {
     params: {
       from: params.from,
       to: params.to,
@@ -155,7 +130,7 @@ const DashboardPanel = ({ panel, dashboard, isViewing, handleRange }) => {
               <PanelCard
                 panel={panel}
                 dashboard={dashboard}
-                width={width - 50}
+                width={width - (50 + (panel.vega.color.legend ? 130 : 0))}
                 height={height - 60}
                 clickTitle={viewToPanel}
                 data={data}
@@ -182,23 +157,33 @@ const DashboardPanel = ({ panel, dashboard, isViewing, handleRange }) => {
       from: new Date(dashboardOption.from).getTime(),
       to: new Date(dashboardOption.to).getTime(),
     };
+    // console.log(dashboard.estype);
 
-    fetchEs(panel.url, option).then((o) => {
-      try {
-        setOkData(initializeAgg(o.body.aggregations, panel.kinds));
-      } catch (error) {
-        setOkData(null);
-      }
-      setLoading(false);
-    });
+    const sendUrl =
+      panel.estype === "telco"
+        ? `telco/_${panel.url}`
+        : `real/${option.service}/_${panel.url}`;
+    fetchEs(sendUrl, option)
+      .then((o) => {
+        try {
+          setOkData(initializeAgg(o.body.aggregations, panel.kinds));
+        } catch (error) {
+          setOkData(null);
+        }
+      })
+      .catch((o) => {
+        setOkData([]);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
     // console.log(dashboardOption, panel, panelRef.current);
-  }, [dashboardOption]);
+  }, [dashboardOption, panel]);
+
   return (
-    <Suspense fallback={<VegaChartLoading />}>
-      <div ref={panelRef} className={classNames(panelWrapperClass)}>
-        {!loading && renderPanel(okData)}
-      </div>
-    </Suspense>
+    <div ref={panelRef} className={classNames(panelWrapperClass)}>
+      {!loading && renderPanel(okData)}
+    </div>
   );
 };
 

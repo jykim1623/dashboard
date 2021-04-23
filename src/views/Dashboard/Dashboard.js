@@ -1,7 +1,7 @@
 import { dashboard as list } from "./data";
 
-import { useContext, useState } from "react";
-import { useHistory, useLocation, useRouteMatch } from "react-router";
+import { useState } from "react";
+import { useHistory, useRouteMatch } from "react-router";
 import { DashboardModel } from "../../app/dashboard/DashboardModel";
 import DashboardPage from "./DashboardPage";
 import { useEffect } from "react";
@@ -11,8 +11,8 @@ import { format, sub } from "date-fns";
 import DashboardContext from "../../app/contexts/DashboardContext";
 
 const Dashboard = () => {
-  const context = useContext(DashboardContext);
-  const { search } = useLocation();
+  // const context = useContext(DashboardContext);
+  // const { search } = useLocation();
   const {
     params: { id },
   } = useRouteMatch();
@@ -25,7 +25,6 @@ const Dashboard = () => {
     to: format(new Date(), "yyyy-MM-dd"),
     service: "h123",
   });
-
   // const handleResize = _.throttle(() => {
   //   console.log(window.innerWidth, window.innerHeight);
   // }, 500);
@@ -37,6 +36,7 @@ const Dashboard = () => {
     if (id) {
       history.push(`/d/${id}`);
     }
+    setDashboard(null);
 
     // window.addEventListener("resize", handleResize);
 
@@ -47,6 +47,8 @@ const Dashboard = () => {
 
   useEffect(() => {
     if (id) {
+      const select = list.find((l) => l.id === id);
+      console.log(select);
       setDashboard(new DashboardModel(list.find((l) => l.id === id)));
     }
   }, [id]);
@@ -74,10 +76,11 @@ const Dashboard = () => {
     setDashboard(newDashboard);
   };
 
-  const handleRangeArea = (time) => {
-    console.log(time);
+  const handleRangeArea = (name, { date }) => {
+    if (date) {
+      setOption({ ...option, from: date[0], to: date[1] });
+    }
   };
-
   return (
     <DashboardContext.Provider value={option}>
       {!dashboard && <div>loading...</div>}
@@ -114,14 +117,16 @@ const Dashboard = () => {
                 onChange={handleTime}
               />
             </div>
-            <div>
-              <label htmlFor="service">service(준비중)</label>
-              <select id="service" onChange={handleService}>
-                <option value="h123">h123</option>
-                <option value="genie">genie</option>
-                <option value="geniecache">geniecache</option>
-              </select>
-            </div>
+            {dashboard.id === "00000005" && (
+              <div>
+                <label htmlFor="service">service</label>
+                <select id="service" onChange={handleService}>
+                  <option value="h123">h123</option>
+                  <option value="genie">genie</option>
+                  <option value="geniecache">geniecache</option>
+                </select>
+              </div>
+            )}
           </div>
           <DashboardPage dashboard={dashboard} handleRange={handleRangeArea} />
         </>

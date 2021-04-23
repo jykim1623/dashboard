@@ -10,5 +10,9 @@ export const byteCalculation = (bytes) => {
 };
 
 export const priceToString = (price) => {
-  return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  try {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  } catch (error) {
+    return 0;
+  }
 };

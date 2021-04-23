@@ -16,8 +16,386 @@ import {
 
 export const dashboard = [
   {
+    id: "00000006",
+    title: "telco",
+    label: "vega",
+    panelInView: true,
+    isResizable: false,
+    isDraggable: false,
+    panels: [
+      {
+        id: 1,
+        title: "request",
+        gridPos: {
+          w: 6,
+          h: 3,
+          x: 0,
+          y: 0,
+        },
+        url: "request",
+        estype: "telco",
+        type: "graph",
+        fieldConfig: {
+          unit: "bytes",
+        },
+        vega: {
+          x: {
+            field: "date",
+            type: "temporal",
+            axis: null,
+          },
+          y: {
+            field: "value",
+            type: "quantitative",
+            axis: null,
+          },
+          color: {
+            field: "symbol",
+            type: "nominal",
+            scale: { scheme: "category20" },
+            legend: null,
+          },
+          params: [],
+        },
+        kinds: "line",
+      },
+      {
+        id: 2,
+        title: "traffic",
+        gridPos: {
+          w: 6,
+          h: 3,
+          x: 6,
+          y: 0,
+        },
+        url: "traffic",
+        estype: "telco",
+        type: "graph",
+        fieldConfig: {
+          unit: "bytes",
+        },
+        vega: {
+          x: {
+            field: "date",
+            type: "temporal",
+            axis: null,
+          },
+          y: {
+            field: "value",
+            type: "quantitative",
+            axis: null,
+          },
+          color: {
+            field: "symbol",
+            type: "nominal",
+            scale: { scheme: "category20" },
+            legend: null,
+          },
+          params: [],
+        },
+        kinds: "line",
+      },
+      {
+        id: 3,
+        title: "session",
+        gridPos: {
+          w: 6,
+          h: 3,
+          x: 0,
+          y: 3,
+        },
+        url: "session",
+        estype: "telco",
+        type: "graph",
+        fieldConfig: {
+          unit: "bytes",
+        },
+        vega: {
+          x: {
+            field: "date",
+            type: "temporal",
+            axis: null,
+          },
+          y: {
+            field: "value",
+            type: "quantitative",
+            axis: null,
+          },
+          color: {
+            field: "symbol",
+            type: "nominal",
+            scale: { scheme: "category20" },
+            legend: null,
+          },
+          params: [],
+        },
+        kinds: "line",
+      },
+      {
+        id: 4,
+        title: "uv",
+        gridPos: {
+          w: 6,
+          h: 3,
+          x: 6,
+          y: 3,
+        },
+        url: "uv",
+        estype: "telco",
+        type: "graph",
+        fieldConfig: {
+          unit: "bytes",
+        },
+        vega: {
+          x: {
+            field: "date",
+            type: "temporal",
+            axis: null,
+          },
+          y: {
+            field: "value",
+            type: "quantitative",
+            axis: null,
+          },
+          color: {
+            field: "symbol",
+            type: "nominal",
+            scale: { scheme: "category20" },
+            legend: null,
+          },
+          params: [],
+        },
+        kinds: "line",
+      },
+      {
+        id: 5,
+        title: "request",
+        gridPos: {
+          w: 3,
+          h: 3,
+          x: 0,
+          y: 6,
+        },
+        url: "requestTotal",
+        estype: "telco",
+        type: "graph",
+        fieldConfig: {
+          unit: "bytes",
+        },
+        vega: {
+          x: {
+            field: "date",
+            type: "temporal",
+            axis: null,
+          },
+          y: {
+            field: "value",
+            type: "quantitative",
+            axis: null,
+          },
+          color: {
+            field: "symbol",
+            type: "nominal",
+            scale: { scheme: "category20" },
+            legend: null,
+          },
+          params: [],
+        },
+        kinds: "line",
+      },
+      {
+        id: 6,
+        title: "Body Sent Traffic",
+        gridPos: {
+          w: 3,
+          h: 3,
+          x: 3,
+          y: 6,
+        },
+        url: "bodysenttraffic",
+        estype: "telco",
+        type: "graph",
+        fieldConfig: {
+          unit: "bytes",
+        },
+        vega: {
+          x: {
+            field: "date",
+            type: "temporal",
+            axis: null,
+          },
+          y: {
+            field: "value",
+            type: "quantitative",
+            axis: null,
+          },
+          color: {
+            field: "symbol",
+            type: "nominal",
+            scale: { scheme: "category20" },
+            legend: null,
+          },
+          params: [],
+        },
+        kinds: "line",
+      },
+      {
+        id: 7,
+        title: "Body Sent",
+        gridPos: {
+          w: 12,
+          h: 4,
+          x: 0,
+          y: 9,
+        },
+        url: "bodysent",
+        estype: "telco",
+        type: "graph",
+        fieldConfig: {
+          unit: "bytes",
+        },
+        vega: {
+          x: {
+            field: "date",
+            type: "temporal",
+          },
+          y: {
+            field: "value",
+            type: "quantitative",
+          },
+          color: {
+            field: "symbol",
+            type: "nominal",
+            scale: { scheme: "category20" },
+            legend: null,
+          },
+          params: [],
+        },
+        kinds: "line",
+      },
+      {
+        id: 8,
+        title: "Status Code",
+        gridPos: {
+          w: 9,
+          h: 4,
+          x: 0,
+          y: 12,
+        },
+        url: "statuscode",
+        estype: "telco",
+        type: "graph",
+        fieldConfig: {
+          unit: "bytes",
+        },
+        vega: {
+          x: {
+            field: "date",
+            type: "temporal",
+          },
+          y: {
+            field: "value",
+            type: "quantitative",
+          },
+          color: {
+            field: "symbol",
+            type: "nominal",
+            scale: { scheme: "category20" },
+            legend: null,
+          },
+          params: [],
+        },
+        kinds: "line",
+      },
+      {
+        id: 9,
+        title: "Status Code(count)",
+        gridPos: {
+          w: 3,
+          h: 4,
+          x: 9,
+          y: 12,
+        },
+        url: "statuscodeCount",
+        estype: "telco",
+        type: "graph",
+        fieldConfig: {},
+        vega: {
+          theta: { field: "value", type: "quantitative" },
+          color: {
+            field: "symbol",
+            type: "nominal",
+            scale: { scheme: "category20" },
+            legend: null,
+          },
+          donut: false,
+        },
+        kinds: "pie",
+      },
+      {
+        id: 10,
+        title: "Request Hit Ratio",
+        gridPos: {
+          w: 9,
+          h: 4,
+          x: 0,
+          y: 15,
+        },
+        url: "requesthitratio",
+        estype: "telco",
+        type: "graph",
+        fieldConfig: {
+          unit: "bytes",
+        },
+        vega: {
+          x: {
+            field: "date",
+            type: "temporal",
+          },
+          y: {
+            field: "value",
+            type: "quantitative",
+          },
+          color: {
+            field: "symbol",
+            type: "nominal",
+            scale: { scheme: "category20" },
+            legend: null,
+          },
+          params: [],
+        },
+        kinds: "line",
+      },
+      {
+        id: 11,
+        title: "Request Hit Ratio(count)",
+        gridPos: {
+          w: 3,
+          h: 4,
+          x: 9,
+          y: 15,
+        },
+        url: "requesthitratioCount",
+        estype: "telco",
+        type: "graph",
+        fieldConfig: {},
+        vega: {
+          theta: { field: "value", type: "quantitative" },
+          color: {
+            field: "symbol",
+            type: "nominal",
+            scale: { scheme: "category20" },
+            legend: null,
+          },
+          donut: false,
+        },
+        kinds: "pie",
+      },
+    ],
+  },
+  {
     id: "00000005",
-    title: "piece of graph",
+    title: "service",
     label: "vega",
     panelInView: true,
     isResizable: false,
@@ -29,10 +407,12 @@ export const dashboard = [
         gridPos: {
           w: 3,
           h: 3,
-          x: 0,
-          y: 0,
+          x: 6,
+          y: 3,
         },
         url: "bodysenttraffic",
+
+        estype: "real",
         type: "graph",
         fieldConfig: {
           unit: "bytes",
@@ -62,12 +442,14 @@ export const dashboard = [
         id: 2,
         title: "referer",
         gridPos: {
-          w: 6,
+          w: 7,
           h: 5,
           x: 0,
-          y: 15,
+          y: 16,
         },
         url: "referer",
+
+        estype: "real",
         type: "graph",
         fieldConfig: {},
         vega: {
@@ -89,9 +471,11 @@ export const dashboard = [
           w: 8,
           h: 5,
           x: 0,
-          y: 5,
+          y: 6,
         },
         url: "bodysent",
+
+        estype: "real",
         type: "graph",
         fieldConfig: {},
         vega: {
@@ -123,6 +507,8 @@ export const dashboard = [
           y: 11,
         },
         url: "statuscode",
+
+        estype: "real",
         type: "graph",
         fieldConfig: {},
         vega: {
@@ -151,9 +537,10 @@ export const dashboard = [
           w: 3,
           h: 5,
           x: 0,
-          y: 20,
+          y: 21,
         },
         url: "os",
+        estype: "real",
         type: "graph",
         fieldConfig: {},
         vega: {
@@ -175,9 +562,11 @@ export const dashboard = [
           w: 3,
           h: 5,
           x: 3,
-          y: 20,
+          y: 21,
         },
         url: "device",
+
+        estype: "real",
         type: "graph",
         fieldConfig: {},
         vega: {
@@ -198,10 +587,12 @@ export const dashboard = [
         gridPos: {
           w: 3,
           h: 3,
-          x: 3,
-          y: 0,
+          x: 0,
+          y: 3,
         },
         url: "requests",
+
+        estype: "real",
         type: "graph",
         fieldConfig: {
           unit: "locales",
@@ -231,12 +622,14 @@ export const dashboard = [
         id: 9,
         title: "statuscodecount",
         gridPos: {
-          w: 3,
+          w: 4,
           h: 5,
           x: 8,
-          y: 3,
+          y: 6,
         },
         url: "statuscodecount",
+
+        estype: "real",
         type: "graph",
         vega: {
           theta: { field: "value", type: "quantitative" },
@@ -254,12 +647,113 @@ export const dashboard = [
         id: 10,
         title: "hitratiocount",
         gridPos: {
-          w: 3,
+          w: 4,
           h: 5,
           x: 8,
-          y: 6,
+          y: 11,
         },
         url: "hitratiocount",
+
+        estype: "real",
+        type: "graph",
+        vega: {
+          theta: { field: "value", type: "quantitative" },
+          color: {
+            field: "symbol",
+            type: "nominal",
+            scale: { scheme: "category20" },
+            legend: true,
+          },
+          donut: false,
+        },
+        kinds: "pie",
+      },
+      {
+        id: 11,
+        title: "request",
+        gridPos: {
+          w: 6,
+          h: 3,
+          x: 0,
+          y: 0,
+        },
+        url: "request",
+
+        estype: "real",
+        type: "graph",
+        fieldConfig: {
+          unit: "locales",
+        },
+        vega: {
+          x: {
+            field: "date",
+            type: "temporal",
+            axis: null,
+          },
+          y: {
+            field: "value",
+            type: "quantitative",
+            axis: null,
+          },
+          color: {
+            field: "symbol",
+            type: "nominal",
+            scale: { scheme: "category20" },
+            legend: null,
+          },
+          params: ["brush"],
+        },
+        kinds: "line",
+      },
+      {
+        id: 12,
+        title: "traffic",
+        gridPos: {
+          w: 6,
+          h: 3,
+          x: 6,
+          y: 0,
+        },
+        url: "traffic",
+
+        estype: "real",
+        type: "graph",
+        fieldConfig: {
+          unit: "bytes",
+        },
+        vega: {
+          x: {
+            field: "date",
+            type: "temporal",
+            axis: null,
+          },
+          y: {
+            field: "value",
+            type: "quantitative",
+            axis: null,
+          },
+          color: {
+            field: "symbol",
+            type: "nominal",
+            scale: { scheme: "category20" },
+            legend: null,
+          },
+          params: ["brush"],
+        },
+        kinds: "line",
+      },
+      {
+        id: 13,
+        title: "browser",
+        gridPos: {
+          w: 3,
+          h: 5,
+          x: 6,
+          y: 21,
+        },
+        url: "browser",
+
+        estype: "real",
         type: "graph",
         vega: {
           theta: { field: "value", type: "quantitative" },

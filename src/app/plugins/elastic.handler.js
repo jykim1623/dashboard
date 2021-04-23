@@ -1,4 +1,4 @@
-import _ from "lodash";
+import _, { result } from "lodash";
 
 const firstBuckets = ({ responses }) => {
   const list = [];
@@ -140,28 +140,48 @@ const checkBucketInner = (buckets) => {
   return solveBucketsArray(buckets);
 };
 
+const bucketProcessingSingle = (aggs, result = []) => {
+  for (const agg in aggs) {
+    if (agg === "buckets") {
+      const buckets = aggs[agg];
+      if (buckets[0].hasOwnProperty("1")) {
+        result = checkBucketInner(aggs[agg]);
+      }
+      if (buckets[0].hasOwnProperty("3")) {
+        for (const bucket of buckets) {
+          bucket["3"]["0"].buckets.map((b) => {
+            result.push({
+              value: b["1"].value,
+              symbol: b.key,
+              date: bucket.key,
+            });
+          });
+        }
+        result = { list: result };
+      }
+    }
+  }
+  return result;
+};
+
 export const initializeAgg = (aggs, kinds) => {
   if (kinds === "line") {
-    let result = [];
-    for (const agg in aggs["4"]) {
-      if (agg === "buckets") {
-        const buckets = aggs["4"][agg];
-        if (buckets[0].hasOwnProperty("1")) {
-          result = checkBucketInner(aggs["4"][agg]);
-        }
-        if (buckets[0].hasOwnProperty("3")) {
-          for (const bucket of buckets) {
-            bucket["3"]["0"].buckets.map((b) => {
-              result.push({
-                value: b["1"].value,
-                symbol: b.key,
-                date: bucket.key,
-              });
-            });
-          }
-          result = { list: result };
-        }
+    let result = { sum: 0, list: { type: true, values: [] } };
+    if (aggs.hasOwnProperty("4")) {
+      const items = bucketProcessingSingle(aggs["4"]);
+      result = { ...items, type: 4 };
+    }
+    if (aggs.hasOwnProperty("5")) {
+      const items = [];
+      const buckets = aggs["5"].buckets;
+      for (const bucket of buckets) {
+        items.push({
+          sum: bucket["1"].value,
+          list: bucketProcessingSingle(bucket["4"]).list,
+          key: bucket.key,
+        });
       }
+      result = { list: [...items], type: 5 };
     }
     return result;
   }
@@ -181,6 +201,6 @@ export const initializeAgg = (aggs, kinds) => {
         break;
       }
     }
-    return { list: result };
+    return { list: result, type: 4 };
   }
 };

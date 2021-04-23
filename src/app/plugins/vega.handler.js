@@ -26,10 +26,12 @@ export const generateSpec = (type, spec) => {
 
 const params = {
   brush: {
-    name: "lienTimeBrush",
+    name: "lineTimeBrush",
     select: {
       type: "interval",
       encodings: ["x"],
+      on: "mousedown",
+      clear: "mouseup",
     },
   },
 };
@@ -40,10 +42,11 @@ const drawSpecPie = (spec) => {
 
   const mark = {
     type: "arc",
+    tooltip: true,
   };
 
   if (spec.donut) {
-    mark.innerRadius = 50;
+    mark.innerRadius = 20;
   }
 
   const result = {
@@ -63,6 +66,7 @@ const drawSpecLine = (spec) => {
   const mark = {
     type: "area",
     line: true,
+    tooltip: true,
   };
   const config = {};
   if (!spec.x.axis) {
@@ -75,11 +79,17 @@ const drawSpecLine = (spec) => {
     config,
     encoding: { ...drawEncoding("x", x) },
     layer: drawLayer({
-      params: [...spec.params.map((param) => params[param])],
+      // params: [...spec.params.map((param) => params[param])],
       mark,
       ...drawEncoding("encoding", {
         y,
         color,
+        strokeOpacity: {
+          value: 0.9,
+        },
+        fillOpacity: {
+          value: 0.4,
+        },
       }),
     }),
   };
