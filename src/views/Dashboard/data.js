@@ -36,7 +36,7 @@ export const dashboard = [
         estype: "telco",
         type: "graph",
         fieldConfig: {
-          unit: "bytes",
+          unit: "short",
         },
         vega: {
           x: {
@@ -108,7 +108,7 @@ export const dashboard = [
         estype: "telco",
         type: "graph",
         fieldConfig: {
-          unit: "bytes",
+          unit: "short",
         },
         vega: {
           x: {
@@ -144,7 +144,7 @@ export const dashboard = [
         estype: "telco",
         type: "graph",
         fieldConfig: {
-          unit: "bytes",
+          unit: "short",
         },
         vega: {
           x: {
@@ -180,7 +180,7 @@ export const dashboard = [
         estype: "telco",
         type: "graph",
         fieldConfig: {
-          unit: "bytes",
+          unit: "none",
         },
         vega: {
           x: {
@@ -595,7 +595,7 @@ export const dashboard = [
         estype: "real",
         type: "graph",
         fieldConfig: {
-          unit: "locales",
+          unit: "none",
         },
         vega: {
           x: {
@@ -682,7 +682,7 @@ export const dashboard = [
         estype: "real",
         type: "graph",
         fieldConfig: {
-          unit: "locales",
+          unit: "short",
         },
         vega: {
           x: {

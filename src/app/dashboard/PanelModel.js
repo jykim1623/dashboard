@@ -1,4 +1,5 @@
 import axios from "axios";
+import { format } from "d3-format";
 import VegaChart from "../../components/Vega/VegaChart";
 import VegaRenderer from "../../components/Vega/VegaRenderer";
 import { initializeAgg } from "../plugins/elastic.handler";
@@ -30,7 +31,10 @@ export class PanelModel {
     if (unit == "bytes") {
       return byteCalculation(sum);
     }
-    if(unit === 'locales'){
+    if(unit == 'short'){
+      return format('~s')(sum);
+    }
+    if(unit === 'none'){
       return priceToString(sum);
     }
     return sum;
