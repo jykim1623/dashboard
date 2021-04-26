@@ -20,6 +20,7 @@ const PanelCard = ({
   height,
   data,
   handleRange,
+  loading,
 }) => {
   const { title, type, id, ...rest } = panel;
   const { label } = dashboard;
@@ -68,15 +69,19 @@ const PanelCard = ({
             style={{ padding: 0 }}
           >
             <div style={{ display: "flex", justifyContent: "center" }}>
-              <div>{title}</div>
+              <div>
+                {title} {loading && <div>loading...</div>}
+              </div>
             </div>
-            <DashboardPanelA
-              width={width}
-              height={height}
-              data={data}
-              panel={panel}
-              handleRange={handleRange}
-            />
+            {!loading && (
+              <DashboardPanelA
+                width={width}
+                height={height}
+                data={data}
+                panel={panel}
+                handleRange={handleRange}
+              />
+            )}
             {/* {panel.render(width, height)} */}
           </div>
         )}
@@ -118,7 +123,7 @@ const DashboardPanel = ({ panel, dashboard, isViewing, handleRange }) => {
   const viewToPanel = (e, id) => {
     history.push(`?viewPanel=${id}`);
   };
-  const renderPanel = (data) => {
+  const renderPanel = (data, loading) => {
     return (
       <AutoSizer>
         {({ width, height }) => {
@@ -128,6 +133,7 @@ const DashboardPanel = ({ panel, dashboard, isViewing, handleRange }) => {
           return (
             <div style={{ width, height }}>
               <PanelCard
+                loading={loading}
                 panel={panel}
                 dashboard={dashboard}
                 width={width - (50 + (panel.vega.color.legend ? 130 : 0))}
@@ -148,7 +154,7 @@ const DashboardPanel = ({ panel, dashboard, isViewing, handleRange }) => {
     "panel-wrapper--view": isViewing,
   });
 
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [okData, setOkData] = useState(null);
   const [, fetchEs] = useAsyncFn((url, option) => getES(url, option));
   useEffect(() => {
@@ -163,6 +169,7 @@ const DashboardPanel = ({ panel, dashboard, isViewing, handleRange }) => {
       panel.estype === "telco"
         ? `telco/_${panel.url}`
         : `real/${option.service}/_${panel.url}`;
+    setLoading(true);
     fetchEs(sendUrl, option)
       .then((o) => {
         try {
@@ -182,7 +189,7 @@ const DashboardPanel = ({ panel, dashboard, isViewing, handleRange }) => {
 
   return (
     <div ref={panelRef} className={classNames(panelWrapperClass)}>
-      {!loading && renderPanel(okData)}
+      {renderPanel(okData, loading)}
     </div>
   );
 };

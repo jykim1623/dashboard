@@ -4,6 +4,7 @@ import D3js from "./views/graphs/D3js";
 import GoogleChart from "./views/graphs/GoogleChart";
 import HighChart from "./views/graphs/HighChart";
 import VegaChartPage from "./views/graphs/VegaChartPage";
+import Home from "./views/Home/Home";
 
 const routes = [
   { name: "vega-lite", path: "/graph/vega-lite", Component: VegaChartPage },
@@ -12,6 +13,7 @@ const routes = [
   { name: "D3js", path: "/graph/d3js", Component: D3js },
   { name: "Dashboard", path: "/d/:id", Component: Dashboard },
   { name: "High Chart", path: "/graph/highchart", Component: HighChart },
+  { name: "Home", path: "/", Component: Home },
 ];
 
 export default routes;

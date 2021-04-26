@@ -80,12 +80,14 @@ const DashboardGrid = ({ dashboard, viewPanel, handleRange }) => {
 
   const renderPanel = (panel) => {
     return (
-      <Panel
-        panel={panel}
-        dashboard={dashboard}
-        isViewing={panel.isViewing}
-        handleRange={handleRange}
-      />
+      <Suspense fallback={<VegaChartLoading />}>
+        <Panel
+          panel={panel}
+          dashboard={dashboard}
+          isViewing={panel.isViewing}
+          handleRange={handleRange}
+        />
+      </Suspense>
     );
   };
 
@@ -118,18 +120,16 @@ const DashboardGrid = ({ dashboard, viewPanel, handleRange }) => {
   };
   const { isDraggable, isResizable } = dashboard;
   return (
-    <Suspense fallback={<VegaChartLoading />}>
-      <SizedReactLayoutGrid
-        className={classNames({ layout: true })}
-        layout={buildLayout()}
-        viewPanel={viewPanel}
-        isDraggable={isDraggable}
-        isResizable={isResizable}
-        onDragStop={onDragStop}
-      >
-        {renderPanels()}
-      </SizedReactLayoutGrid>
-    </Suspense>
+    <SizedReactLayoutGrid
+      className={classNames({ layout: true })}
+      layout={buildLayout()}
+      viewPanel={viewPanel}
+      isDraggable={isDraggable}
+      isResizable={isResizable}
+      onDragStop={onDragStop}
+    >
+      {renderPanels()}
+    </SizedReactLayoutGrid>
   );
 };
 

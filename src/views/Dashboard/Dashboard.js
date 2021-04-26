@@ -1,14 +1,17 @@
 import { dashboard as list } from "./data";
 
-import { useState } from "react";
+import { lazy, useState } from "react";
 import { useHistory, useRouteMatch } from "react-router";
 import { DashboardModel } from "../../app/dashboard/DashboardModel";
-import DashboardPage from "./DashboardPage";
+// import DashboardPage from "./DashboardPage";
 import { useEffect } from "react";
 
 import _ from "lodash";
 import { format, sub } from "date-fns";
 import DashboardContext from "../../app/contexts/DashboardContext";
+import { Suspense } from "react";
+
+const DashboardPage = lazy(() => import("./DashboardPage"));
 
 const Dashboard = () => {
   // const context = useContext(DashboardContext);
@@ -36,7 +39,6 @@ const Dashboard = () => {
     if (id) {
       history.push(`/d/${id}`);
     }
-    setDashboard(null);
 
     // window.addEventListener("resize", handleResize);
 
@@ -47,16 +49,23 @@ const Dashboard = () => {
 
   useEffect(() => {
     if (id) {
-      const select = list.find((l) => l.id === id);
-      console.log(select);
       setDashboard(new DashboardModel(list.find((l) => l.id === id)));
     }
   }, [id]);
 
   useEffect(() => {
     if (dashboard) {
+      const m = option.to - option.from;
+      if (m > 60 * 60 * 24 * 30 * 1000) {
+        alert("검색 일은 한달까지만 가능합니다");
+        return;
+      }
+      if (m < 0) {
+        alert("검색 일 설정 에러입니다.");
+        return;
+      }
       const time = { from: option.from, to: option.to };
-      dashboard.changeTime(time);
+      // dashboard.changeTime(time);
     }
   }, [option.from, option.to]);
 
@@ -128,7 +137,12 @@ const Dashboard = () => {
               </div>
             )}
           </div>
-          <DashboardPage dashboard={dashboard} handleRange={handleRangeArea} />
+          <Suspense fallback={<div>dashboard loading...</div>}>
+            <DashboardPage
+              dashboard={dashboard}
+              handleRange={handleRangeArea}
+            />
+          </Suspense>
         </>
       )}
     </DashboardContext.Provider>
