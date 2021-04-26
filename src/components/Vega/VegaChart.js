@@ -16,7 +16,7 @@ const VegaChart = ({ panel, width, height, data, handleRange }) => {
       spec={newSpec}
       width={width}
       height={height}
-      render="svg"
+      render="canvas"
       handleRangeCallback={handleRange}
     />
   );
