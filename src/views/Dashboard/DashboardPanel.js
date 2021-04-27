@@ -11,6 +11,8 @@ import axios from "axios";
 import DashboardContext from "../../app/contexts/DashboardContext";
 import { initializeAgg } from "../../app/plugins/elastic.handler";
 import DashboardPanelA from "./DashboardPanelA";
+import { Link } from "react-router-dom";
+import VegaChartLoading from "../../components/Vega/VegaChartLoading";
 
 const PanelCard = ({
   panel,
@@ -43,10 +45,41 @@ const PanelCard = ({
         {title && (
           <div
             className="card-header"
-            style={{ width: "100%" }}
-            onClick={(e) => clickTitle(e, id)}
+            style={{
+              display: "flex",
+              width: "100%",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+            // onClick={(e) => clickTitle(e, id)}
           >
-            {title}
+            <div className="dropdown">
+              <button
+                className={classNames(
+                  "btn",
+                  "btn-white",
+                  "dropdown-toggle",
+                  "btn-sm"
+                )}
+                type="button"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                {title}
+              </button>
+              <ul
+                className="dropdown-menu"
+                aria-labelledby="dropdownMenuButton1"
+              >
+                <li>
+                  <Link className="dropdown-item" to={`?viewPanel=${id}`}>
+                    view
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            {loading && <VegaChartLoading size="sm" />}
           </div>
         )}
         {type === "list" && (

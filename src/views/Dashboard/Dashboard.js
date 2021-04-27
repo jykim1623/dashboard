@@ -37,23 +37,15 @@ const Dashboard = () => {
     if (!id) {
       history.push(`/d/00000001`);
     }
+
     if (id) {
-      history.push(`/d/${id}`);
+      // history.push(`/d/${id}`);
+      setDashboard(new DashboardModel(list.find((l) => l.id === id)));
     }
-
-    // window.addEventListener("resize", handleResize);
-
     return () => {
       document.getElementById("root").removeAttribute("class");
     };
-  }, []);
-
-  useEffect(() => {
-    if (id) {
-      setDashboard(new DashboardModel(list.find((l) => l.id === id)));
-    }
   }, [id]);
-
   useEffect(() => {
     if (dashboard) {
       const m = option.to - option.from;

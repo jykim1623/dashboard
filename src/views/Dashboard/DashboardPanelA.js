@@ -45,7 +45,7 @@ const Panel = ({ width, height, data, type, handleRange }) => {
         position: "relative",
         display: "table",
         width: "100%",
-        height: "calc(100% - 24px)",
+        height: "100%",
       }}
     >
       {data?.sum && (
