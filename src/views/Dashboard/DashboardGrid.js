@@ -17,6 +17,7 @@ const GridWrapper = ({
   onDragStop,
   onResize,
   onResizeStop,
+  onLayoutChange,
   className,
   isResizable,
   isDraggable,
@@ -39,12 +40,14 @@ const GridWrapper = ({
       cols={12}
       rowHeight={50}
       containerPadding={[0, 0]}
+      onLayoutChange={onLayoutChange}
       isResizable={isResizable}
       isDraggable={isDraggable}
       onDragStop={onDragStop}
       onResize={onResize}
       onResizeStop={onResizeStop}
       useCSSTransforms={false}
+      isBounded={false}
     >
       {children}
     </ReactGridLayout>
@@ -115,6 +118,31 @@ const DashboardGrid = ({ dashboard, viewPanel, handleRange }) => {
     return layout;
   };
 
+  const onLayoutChange = (newLayout) => {
+    console.log(newLayout);
+    for (const newPos of newLayout) {
+      panelMap[newPos?.i].updateGridPos(newPos);
+    }
+
+    dashboard.sortPanelsByGridPos();
+  };
+
+  const updateGridPos = (item, layout) => {
+    panelMap[item?.i].updateGridPos(item);
+
+    // react-grid-layout has a bug (#670), and onLayoutChange() is only called when the component is mounted.
+    // So it's required to call it explicitly when panel resized or moved to save layout changes.
+    onLayoutChange(layout);
+  };
+
+  const onResize = (layout, oldItem, newItem) => {
+    panelMap[newItem.i].updateGridPos(newItem);
+  };
+
+  const onResizeStop = (layout, oldItem, newItem) => {
+    updateGridPos(newItem, layout);
+  };
+
   const onDragStop = (a, b, c) => {
     console.log(a, b, c);
   };
@@ -124,6 +152,9 @@ const DashboardGrid = ({ dashboard, viewPanel, handleRange }) => {
       className={classNames({ layout: true })}
       layout={buildLayout()}
       viewPanel={viewPanel}
+      onLayoutChange={onLayoutChange}
+      onResize={onResize}
+      onResizeStop={onResizeStop}
       isDraggable={isDraggable}
       isResizable={isResizable}
       onDragStop={onDragStop}

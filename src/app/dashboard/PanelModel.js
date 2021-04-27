@@ -83,6 +83,13 @@ export class PanelModel {
     );
   }
 
+  updateGridPos(newPos){
+    this.gridPos.x = newPos.x;
+    this.gridPos.y = newPos.y;
+    this.gridPos.w = newPos.w;
+    this.gridPos.h = newPos.h;
+  }
+
   init(url) {
     this.fetchingData(url);
   }
