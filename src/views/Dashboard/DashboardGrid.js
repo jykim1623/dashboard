@@ -52,8 +52,7 @@ const GridWrapper = ({
       onResizeStop={onResizeStop}
       useCSSTransforms={false}
       isBounded={false}
-      useCSSTransforms={false}
-      transformScale={0}
+      // transformScale={0}
     >
       {children}
     </ReactGridLayout>

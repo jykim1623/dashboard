@@ -137,7 +137,7 @@ const DashboardPanel = ({ panel, dashboard, isViewing, handleRange }) => {
                 panel={panel}
                 dashboard={dashboard}
                 width={width - (50 + (panel.vega.color.legend ? 130 : 0))}
-                height={height - 60}
+                height={height - 80}
                 clickTitle={viewToPanel}
                 data={data}
                 handleRange={handleRange}
