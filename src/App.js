@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter } from "react-router-dom";
 import Content from "./layout/Content";
@@ -9,7 +10,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <div className="container-fluid">
+        <div className={classNames("container-fluid", "dashboard-container")}>
           <Header />
           <Content />
         </div>

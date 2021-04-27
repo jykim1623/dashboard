@@ -31,6 +31,16 @@
   transform: translate(0) !important;
 }
 
+.panel-in-fullscreen .dashboard-container--has-submenu .react-grid-layout {
+  height: -webkit-calc(100% - 50px) !important;
+  height: calc(100% - 50px) !important;
+}
+
+.panel-height-helper {
+  display: block;
+  height: 100%;
+}
+
 .panel-wrapper {
   height: 100%;
   position: relative;

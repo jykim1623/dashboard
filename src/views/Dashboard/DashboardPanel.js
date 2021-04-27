@@ -40,7 +40,7 @@ const PanelCard = ({
   if (label === "vega") {
     return (
       <div className={classNames("card", "panel-container")}>
-        {/* {title && (
+        {title && (
           <div
             className="card-header"
             style={{ width: "100%" }}
@@ -48,7 +48,7 @@ const PanelCard = ({
           >
             {title}
           </div>
-        )} */}
+        )}
         {type === "list" && (
           <ul
             className="list-group list-group-flush"
@@ -68,11 +68,11 @@ const PanelCard = ({
             className={classNames("card-body", "panel-content")}
             style={{ padding: 0 }}
           >
-            <div style={{ display: "flex", justifyContent: "center" }}>
+            {/* <div style={{ display: "flex", justifyContent: "center" }}>
               <div>
                 {title} {loading && <div>loading...</div>}
               </div>
-            </div>
+            </div> */}
             {!loading && (
               <DashboardPanelA
                 width={width}
@@ -188,9 +188,20 @@ const DashboardPanel = ({ panel, dashboard, isViewing, handleRange }) => {
   }, [dashboardOption, panel]);
 
   return (
-    <div ref={panelRef} className={classNames(panelWrapperClass)}>
-      {renderPanel(okData, loading)}
-    </div>
+    <>
+      {isViewing && (
+        <div className="panel-height-helper">
+          <div ref={panelRef} className={classNames(panelWrapperClass)}>
+            {renderPanel(okData, loading)}
+          </div>
+        </div>
+      )}
+      {!isViewing && (
+        <div ref={panelRef} className={classNames(panelWrapperClass)}>
+          {renderPanel(okData, loading)}
+        </div>
+      )}
+    </>
   );
 };
 

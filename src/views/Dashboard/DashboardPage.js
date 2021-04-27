@@ -8,6 +8,7 @@ import DashboardGrid from "./DashboardGrid";
 const DashboardPage = ({ dashboard, handleRange }) => {
   const location = useLocation();
   const params = useRouteMatch();
+  const [scrollTop, setScrollTop] = useState(0);
 
   const [viewPanel, setViewPanel] = useState(null);
 
@@ -27,6 +28,7 @@ const DashboardPage = ({ dashboard, handleRange }) => {
       });
     }
 
+    
     if (viewPanel && !urlViewPanelId) {
       setPanelFullscreenClass(false);
       dashboard.exitViewPanel(viewPanel);
@@ -47,11 +49,12 @@ const DashboardPage = ({ dashboard, handleRange }) => {
   }, [location.search]);
 
   return (
-    <div className="dashboard-container">
+    <div className="dashboard-container dashboard-container--has-submenu">
       <DashboardGrid
         dashboard={dashboard}
         viewPanel={viewPanel}
         handleRange={handleRange}
+        scrollTop={scrollTop}
       />
     </div>
   );

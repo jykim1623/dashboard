@@ -20,8 +20,8 @@ export const dashboard = [
     title: "telco",
     label: "vega",
     panelInView: true,
-    isResizable: false,
-    isDraggable: false,
+    isResizable: true,
+    isDraggable: true,
     panels: [
       {
         id: 1,

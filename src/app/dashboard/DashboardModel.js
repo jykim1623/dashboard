@@ -34,6 +34,8 @@ export class DashboardModel {
     });
 
     this.events = new EventBusSrv();
+
+    this.panelInEdit = true;
   }
 
   handleBrush(a) {
@@ -67,5 +69,12 @@ export class DashboardModel {
         return panelA.gridPos.y - panelB.gridPos.y;
       }
     });
+  }
+
+  otherPanelInFullscreen(panel) {
+    return (
+      (this.panelInEdit || this.panelInView) &&
+      !(panel.isViewing || panel.isEditing)
+    );
   }
 }

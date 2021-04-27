@@ -1,5 +1,21 @@
-@import "./custom";
+// @import "./react";
 
 @import "bootstrap/dist/css/bootstrap.min.css";
 
 @import "./dashboard";
+
+@import "./custom";
+
+html,
+body {
+  height: 100%;
+}
+
+#root,
+.dashboard {
+  height: 100%;
+}
+
+.dashboard > .dashboard-container {
+  height: 100%;
+}

@@ -31,10 +31,10 @@ export class PanelModel {
     if (unit == "bytes") {
       return byteCalculation(sum);
     }
-    if(unit == 'short'){
-      return format('~s')(sum);
+    if (unit == "short") {
+      return format("~s")(sum);
     }
-    if(unit === 'none'){
+    if (unit === "none") {
       return priceToString(sum);
     }
     return sum;
@@ -83,7 +83,7 @@ export class PanelModel {
     );
   }
 
-  updateGridPos(newPos){
+  updateGridPos(newPos) {
     this.gridPos.x = newPos.x;
     this.gridPos.y = newPos.y;
     this.gridPos.w = newPos.w;

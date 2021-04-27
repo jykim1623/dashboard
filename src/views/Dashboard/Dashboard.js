@@ -33,6 +33,7 @@ const Dashboard = () => {
   // }, 500);
 
   useEffect(() => {
+    document.getElementById("root").setAttribute("class", "dashboard");
     if (!id) {
       history.push(`/d/00000001`);
     }
@@ -42,9 +43,9 @@ const Dashboard = () => {
 
     // window.addEventListener("resize", handleResize);
 
-    // return () => {
-    //   window.removeEventListener("resize", handleResize);
-    // };
+    return () => {
+      document.getElementById("root").removeAttribute("class");
+    };
   }, []);
 
   useEffect(() => {
@@ -96,7 +97,7 @@ const Dashboard = () => {
       {dashboard && (
         <>
           <div style={{ display: "flex", alignItems: "center" }}>
-            <label htmlFor="drag">drag</label>
+            {/* <label htmlFor="drag">drag</label>
             <input
               id="drag"
               type="checkbox"
@@ -111,7 +112,7 @@ const Dashboard = () => {
               name="isResizable"
               checked={dashboard.isResizable}
               onChange={handleToggle}
-            />
+            /> */}
             <div style={{ display: "flex" }}>
               <input
                 type="date"
