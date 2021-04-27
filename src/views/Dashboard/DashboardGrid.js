@@ -2,8 +2,9 @@ import ReactGridLayout from "react-grid-layout";
 import classNames from "classnames";
 import sizeMe from "react-sizeme";
 import { hot } from "react-hot-loader";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect, useReducer } from "react";
 import VegaChartLoading from "../../components/Vega/VegaChartLoading";
+import { Subscription } from "rxjs";
 
 const Panel = lazy(() => import("./DashboardPanel"));
 
@@ -58,6 +59,22 @@ const SizedReactLayoutGrid = sizeMe({ monitorWidth: true })(GridWrapper);
 
 const DashboardGrid = ({ dashboard, viewPanel, handleRange }) => {
   const panelMap = {};
+  const eventSubs = new Subscription();
+  const [ignored, forceUpdate] = useReducer((x) => x + 1, 0);
+
+  const handleTrigger = () => {
+    forceUpdate();
+  };
+
+  useEffect(() => {
+    eventSubs.add(
+      dashboard.events.subscribe("dashboard-panels-changed", handleTrigger)
+    );
+
+    return () => {
+      eventSubs.unsubscribe();
+    };
+  }, []);
 
   const renderPanels = () => {
     const panelElements = [];
@@ -119,7 +136,6 @@ const DashboardGrid = ({ dashboard, viewPanel, handleRange }) => {
   };
 
   const onLayoutChange = (newLayout) => {
-    console.log(newLayout);
     for (const newPos of newLayout) {
       panelMap[newPos?.i].updateGridPos(newPos);
     }

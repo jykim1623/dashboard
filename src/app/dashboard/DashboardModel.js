@@ -1,4 +1,5 @@
 import _ from "lodash";
+import EventBusSrv from "./EventBusSrv";
 import { PanelModel } from "./PanelModel";
 
 export class DashboardModel {
@@ -31,6 +32,8 @@ export class DashboardModel {
     this.panels = _.map(data.panels || [], (panelData) => {
       return new PanelModel(panelData);
     });
+
+    this.events = new EventBusSrv();
   }
 
   handleBrush(a) {
