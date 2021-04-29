@@ -22,6 +22,7 @@ export class PanelModel {
     this.vega = data.vega;
     this.estype = data.estype;
     this.fieldConfig = data.fieldConfig;
+    this.info = data.info;
     // this.init(data.url);
     this.getSpec();
   }

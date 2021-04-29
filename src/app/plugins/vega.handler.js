@@ -66,7 +66,7 @@ const drawSpecLine = (spec) => {
   const mark = {
     type: "area",
     line: true,
-    tooltip: true,
+    // tooltip: true,
   };
   const config = {};
   if (!spec.x.axis) {
@@ -78,20 +78,44 @@ const drawSpecLine = (spec) => {
     ...defaultSpec,
     config,
     encoding: { ...drawEncoding("x", x) },
-    layer: drawLayer({
-      // params: [...spec.params.map((param) => params[param])],
-      mark,
-      ...drawEncoding("encoding", {
-        y,
-        color,
-        strokeOpacity: {
-          value: 0.9,
-        },
-        fillOpacity: {
-          value: 0.4,
-        },
+    layer: [
+      ...drawLayer({
+        // params: [...spec.params.map((param) => params[param])],
+        mark,
+        ...drawEncoding("encoding", {
+          y,
+          color,
+          strokeOpacity: {
+            value: 0.9,
+          },
+          fillOpacity: {
+            value: 0.4,
+          },
+        }),
       }),
-    }),
+      ...drawLayer({
+        transform: [{ pivot: "symbol", value: "value", groupby: ["date"] }],
+        mark: "rule",
+        encoding: {
+          opacity: {
+            condition: { value: 0.3, param: "hover", empty: false },
+            value: 0,
+          },
+        },
+        params: [
+          {
+            name: "hover",
+            select: {
+              type: "point",
+              fields: ["date"],
+              nearest: true,
+              on: "mouseover",
+              clear: "mouseout",
+            },
+          },
+        ],
+      }),
+    ],
   };
   return result;
 };

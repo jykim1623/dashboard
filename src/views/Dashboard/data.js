@@ -16,6 +16,105 @@ import {
 
 export const dashboard = [
   {
+    id: "00000008",
+    label: "grafana",
+    panelInView: true,
+    isResizable: true,
+    isDraggable: true,
+    panels: [
+      {
+        id: 1,
+        title: "bodysent",
+        gridPos: {
+          w: 6,
+          h: 3,
+          x: 0,
+          y: 0,
+        },
+        info: {
+          dashId: "IfnAU1jWz",
+          dashName: "telco-stat",
+          orgId: 1,
+          panelId:13,
+          var: {
+            varTelco: "kt-statistics-service",
+            varModule: "nginx",
+          },
+        },
+      },
+      {
+        id: 2,
+        title: "bodysent",
+        gridPos: {
+          w: 6,
+          h: 3,
+          x: 6,
+          y: 0,
+        },
+        info: {
+          dashId: "IfnAU1jWz",
+          dashName: "telco-stat",
+          orgId: 1,
+          panelId:12,
+          var: {
+            varTelco: "kt-statistics-service",
+            varModule: "nginx",
+          },
+        },
+      },
+    ],
+  },
+  {
+    id: "00000007",
+    title: "telco",
+    label: "vega",
+    panelInView: true,
+    isResizable: true,
+    isDraggable: true,
+    panels: [
+      {
+        id: 1,
+        title: "bodysent",
+        gridPos: {
+          w: 12,
+          h: 6,
+          x: 0,
+          y: 0,
+        },
+        url: "bodysent",
+        estype: "telco",
+        type: "graph",
+        fieldConfig: {
+          unit: "short",
+        },
+        vega: {
+          x: {
+            field: "date",
+            type: "temporal",
+            axis: {
+              tickCount: "ceil(width/60)",
+              labelAlign: "center",
+              labelExpr:
+                "[timeFormat(datum.value, '%m-%d'), timeFormat(datum.value, '%H:%M')]",
+            },
+          },
+          y: {
+            field: "value",
+            type: "quantitative",
+          },
+          color: {
+            field: "symbol",
+            type: "nominal",
+            scale: { scheme: "category20" },
+            legend: null,
+          },
+          params: [],
+        },
+        kinds: "line",
+      },
+    ],
+  },
+  {
     id: "00000006",
     title: "telco",
     label: "vega",

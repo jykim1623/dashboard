@@ -27,8 +27,8 @@ const VegaRenderer = ({
     const view = new View(parse(vgSpec))
       .logLevel(Warn)
       .renderer(render)
-      .width(width)
-      .height(height)
+      .width(width || "container")
+      .height(height || "container")
       .tooltip(tooltipHandler)
       .initialize(renderRef.current);
 

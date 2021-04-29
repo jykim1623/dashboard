@@ -24,8 +24,22 @@ const PanelCard = ({
   handleRange,
   loading,
 }) => {
-  const { title, type, id, ...rest } = panel;
+  const { title, type, id, info, ...rest } = panel;
   const { label } = dashboard;
+  if (label === "grafana") {
+    const host = "http://log.solbox.com:3000/grafana/d-solo";
+    const dashId = info.dashId;
+    const dashName = info.dashName;
+    const panelId = info.panelId;
+    const orgId = info.orgId;
+    const theme = info.theme || "light";
+    const src = `${host}/${dashId}/${dashName}?from=1619574484985&to=1619596084985&orgId=${orgId}&panelId=${panelId}&theme=${theme}&frameBorder=0`;
+    console.log(src);
+    return (
+      <iframe src={src} width={width} height={height} frameborder="0"></iframe>
+    );
+  }
+
   if (label === "chartjs") {
     return (
       <div className={classNames("card", "panel-container")}>
@@ -169,8 +183,8 @@ const DashboardPanel = ({ panel, dashboard, isViewing, handleRange }) => {
                 loading={loading}
                 panel={panel}
                 dashboard={dashboard}
-                width={width - (50 + (panel.vega.color.legend ? 130 : 0))}
-                height={height - 80}
+                width={width}
+                height={height}
                 clickTitle={viewToPanel}
                 data={data}
                 handleRange={handleRange}
@@ -198,25 +212,27 @@ const DashboardPanel = ({ panel, dashboard, isViewing, handleRange }) => {
     };
     // console.log(dashboard.estype);
 
-    const sendUrl =
-      panel.estype === "telco"
-        ? `telco/_${panel.url}`
-        : `real/${option.service}/_${panel.url}`;
-    setLoading(true);
-    fetchEs(sendUrl, option)
-      .then((o) => {
-        try {
-          setOkData(initializeAgg(o.body.aggregations, panel.kinds));
-        } catch (error) {
-          setOkData(null);
-        }
-      })
-      .catch((o) => {
-        setOkData([]);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+    if (dashboard.label === "vega") {
+      const sendUrl =
+        panel.estype === "telco"
+          ? `telco/_${panel.url}`
+          : `real/${option.service}/_${panel.url}`;
+      setLoading(true);
+      fetchEs(sendUrl, option)
+        .then((o) => {
+          try {
+            setOkData(initializeAgg(o.body.aggregations, panel.kinds));
+          } catch (error) {
+            setOkData(null);
+          }
+        })
+        .catch((o) => {
+          setOkData([]);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    }
     // console.log(dashboardOption, panel, panelRef.current);
   }, [dashboardOption, panel]);
 

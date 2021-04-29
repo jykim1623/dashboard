@@ -77,6 +77,16 @@ const Header = () => {
               </Link>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
+                  <Link className="dropdown-item" to="/d/00000008">
+                    grafana iframe sample
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/d/00000007">
+                    practice graph
+                  </Link>
+                </li>
+                <li>
                   <Link className="dropdown-item" to="/d/00000006">
                     Telco Stat
                   </Link>

@@ -169,7 +169,7 @@ export const initializeAgg = (aggs, kinds) => {
     let result = { sum: 0, list: { type: true, values: [] } };
     if (aggs.hasOwnProperty("4")) {
       const items = bucketProcessingSingle(aggs["4"]);
-      result = { ...items, type: 4 };
+      result = { ...items, type: 4, tooltip: [] };
     }
     if (aggs.hasOwnProperty("5")) {
       const items = [];
