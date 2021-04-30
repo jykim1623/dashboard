@@ -25,6 +25,7 @@ const PanelCard = ({
   loading,
 }) => {
   const { title, type, id, info, ...rest } = panel;
+  const { from, to } = useContext(DashboardContext);
   const { label } = dashboard;
   if (label === "grafana") {
     const host = "http://192.168.120.161:3000/d-solo";
@@ -33,7 +34,11 @@ const PanelCard = ({
     const panelId = info.panelId;
     const orgId = info.orgId;
     const theme = info.theme || "light";
-    const src = `${host}/${dashId}/${dashName}?from=1619574484985&to=1619596084985&orgId=${orgId}&panelId=${panelId}&theme=${theme}&frameBorder=0`;
+    const src = `${host}/${dashId}/${dashName}?from=${new Date(
+      from
+    ).getTime()}&to=${new Date(
+      to
+    ).getTime()}&orgId=${orgId}&panelId=${panelId}&theme=${theme}&frameBorder=0`;
     console.log(src);
     return (
       <iframe src={src} width={width} height={height} frameborder="0"></iframe>

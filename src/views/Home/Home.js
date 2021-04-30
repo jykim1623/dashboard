@@ -55,10 +55,12 @@ function Home() {
         height={height}
         frameBorder="0"
       ></iframe>
-      
-       <iframe src="http://log.solbox.com:3000/grafana/d-solo/IfnAU1jWz/telco-stats?orgId=1&from=1619415101987&to=1619674301987&var-telco=lg-statistics-service&var-module=nginx&panelId=7" width="450" height="200" frameborder="0"></iframe>
-
-       
+      <iframe
+        src="http://192.168.120.161:3000/d-solo/IfnAU1jWz/telco-stats?orgId=1&var-telco=kt-statistics-service&var-module=nginx&from=1619499871123&to=1619759071123&panelId=7"
+        width="450"
+        height="200"
+        frameborder="0"
+      ></iframe>
     </Suspense>
   );
 }
