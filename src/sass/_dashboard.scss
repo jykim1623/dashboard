@@ -90,3 +90,8 @@
   position: "relative";
   z-index: 100;
 }
+
+.react-resizable-handle,
+.react-resizable-handle-se {
+  z-index: 1000;
+}

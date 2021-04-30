@@ -42,7 +42,9 @@ const drawSpecPie = (spec) => {
 
   const mark = {
     type: "arc",
-    tooltip: true,
+    tooltip: {
+      format: "~s",
+    },
   };
 
   if (spec.donut) {
@@ -59,11 +61,14 @@ const drawSpecPie = (spec) => {
 };
 
 const drawSpecLine = (spec) => {
-  const x = { ...xAxis(spec.x) };
+  const x = {
+    ...xAxis(spec.x),
+  };
   const y = { ...yAxis(spec.y) };
   const color = { ...colorScale(spec.color) };
 
   const mark = {
+    // type: "line",
     type: "area",
     line: true,
     tooltip: true,
@@ -78,20 +83,47 @@ const drawSpecLine = (spec) => {
     ...defaultSpec,
     config,
     encoding: { ...drawEncoding("x", x) },
-    layer: drawLayer({
-      // params: [...spec.params.map((param) => params[param])],
-      mark,
-      ...drawEncoding("encoding", {
-        y,
-        color,
-        strokeOpacity: {
-          value: 0.9,
+    layer: [
+      {
+        // params: [...spec.params.map((param) => params[param])],
+        mark,
+        ...drawEncoding("encoding", {
+          y,
+          color,
+          strokeOpacity: {
+            value: 0.9,
+          },
+          fillOpacity: {
+            value: 0.4,
+          },
+        }),
+      },
+      {
+        // params: [...spec.params.map((param) => params[param])],
+        transform: [{ pivot: "symbol", value: "value", groupby: ["date"] }],
+        mark: {
+          type: "rule",
         },
-        fillOpacity: {
-          value: 0.4,
+        encoding: {
+          opacity: {
+            condition: { value: 0.3, param: "hover", empty: false },
+            value: 0,
+          },
         },
-      }),
-    }),
+        params: [
+          {
+            name: "hover",
+            select: {
+              type: "point",
+              fields: ["date"],
+              nearest: true,
+              on: "mouseover",
+              clear: "mouseout",
+            },
+          },
+        ],
+      },
+    ],
   };
   return result;
 };

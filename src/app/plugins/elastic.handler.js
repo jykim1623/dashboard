@@ -109,7 +109,7 @@ const solveBucketsArray = (buckets, list = []) => {
     let sum = 0;
     for (const bucket of buckets) {
       const bk = bucket["1"];
-      const data = { value: bk.value, date: bucket.key };
+      const data = { value: Math.floor(bk.value), date: bucket.key };
       // if (bk.hasOwnProperty("key")) {
       //   data.key = bk.key;
       // }
@@ -151,7 +151,7 @@ const bucketProcessingSingle = (aggs, result = []) => {
         for (const bucket of buckets) {
           bucket["3"]["0"].buckets.map((b) => {
             result.push({
-              value: b["1"].value,
+              value: Math.floor(b["1"].value),
               symbol: b.key,
               date: bucket.key,
             });
@@ -170,6 +170,13 @@ export const initializeAgg = (aggs, kinds) => {
     if (aggs.hasOwnProperty("4")) {
       const items = bucketProcessingSingle(aggs["4"]);
       result = { ...items, type: 4 };
+      const keys = _.chain(items.list)
+        .groupBy("symbol")
+        .map((a, b) => b)
+        .value();
+      if (keys[0] !== "undefined") {
+        result.keys = keys;
+      }
     }
     if (aggs.hasOwnProperty("5")) {
       const items = [];
