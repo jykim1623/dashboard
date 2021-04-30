@@ -27,7 +27,7 @@ const PanelCard = ({
   const { title, type, id, info, ...rest } = panel;
   const { label } = dashboard;
   if (label === "grafana") {
-    const host = "http://log.solbox.com:3000/grafana/d-solo";
+    const host = "http://192.168.120.161:3000/d-solo";
     const dashId = info.dashId;
     const dashName = info.dashName;
     const panelId = info.panelId;

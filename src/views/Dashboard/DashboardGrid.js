@@ -8,7 +8,7 @@ import { Subscription } from "rxjs";
 
 const Panel = lazy(() => import("./DashboardPanel"));
 
-const GRID_CELL_HEIGHT = 50;
+const GRID_CELL_HEIGHT = 30;
 
 let lastGridWidth = 1200;
 let ignoreNextWidthChange = false;
@@ -41,7 +41,7 @@ const GridWrapper = ({
       className={className}
       width={lastGridWidth}
       layout={layout}
-      cols={12}
+      cols={24}
       rowHeight={rowHeight}
       containerPadding={[0, 0]}
       onLayoutChange={onLayoutChange}

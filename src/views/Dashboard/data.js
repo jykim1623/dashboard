@@ -18,6 +18,7 @@ export const dashboard = [
   {
     id: "00000008",
     label: "grafana",
+    title: "Telco-stat",
     panelInView: true,
     isResizable: true,
     isDraggable: true,
@@ -26,16 +27,16 @@ export const dashboard = [
         id: 1,
         title: "bodysent",
         gridPos: {
-          w: 6,
-          h: 3,
+          w: 11,
+          h: 4,
           x: 0,
-          y: 0,
+          y: 1,
         },
         info: {
           dashId: "IfnAU1jWz",
           dashName: "telco-stat",
           orgId: 1,
-          panelId:13,
+          panelId: 13,
           var: {
             varTelco: "kt-statistics-service",
             varModule: "nginx",
@@ -46,22 +47,202 @@ export const dashboard = [
         id: 2,
         title: "bodysent",
         gridPos: {
-          w: 6,
-          h: 3,
-          x: 6,
-          y: 0,
+          w: 12,
+          h: 4,
+          x: 12,
+          y: 1,
         },
         info: {
           dashId: "IfnAU1jWz",
           dashName: "telco-stat",
           orgId: 1,
-          panelId:12,
+          panelId: 12,
           var: {
             varTelco: "kt-statistics-service",
             varModule: "nginx",
           },
         },
       },
+      {
+        id: 3,
+        title: "bodysent",
+        gridPos: {
+          w: 4,
+          h: 3,
+          x: 0,
+          y: 10,
+        },
+        info: {
+          dashId: "IfnAU1jWz",
+          dashName: "telco-stat",
+          orgId: 1,
+          panelId: 9,
+          var: {
+            varTelco: "kt-statistics-service",
+            varModule: "nginx",
+          },
+        },
+      },
+      {
+        id: 4,
+        title: "bodysent",
+        gridPos: {
+          w: 12,
+          h: 4,
+          x: 12,
+          y: 5,
+        },
+        info: {
+          dashId: "IfnAU1jWz",
+          dashName: "telco-stat",
+          orgId: 1,
+          panelId: 14,
+          var: {
+            varTelco: "kt-statistics-service",
+            varModule: "nginx",
+          },
+        },
+      },
+      {
+        id: 5,
+        title: "bodysent",
+        gridPos: {
+          w: 11,
+          h: 4,
+          x: 0,
+          y: 5,
+        },
+        info: {
+          dashId: "IfnAU1jWz",
+          dashName: "telco-stat",
+          orgId: 1,
+          panelId: 15,
+          var: {
+            varTelco: "kt-statistics-service",
+            varModule: "nginx",
+          },
+        },
+      },
+      {
+        id: 6,
+        title: "bodysent",
+        gridPos: {
+          w: 24,
+          h: 7,
+          x: 0,
+          y: 13,
+        },
+        info: {
+          dashId: "IfnAU1jWz",
+          dashName: "telco-stat",
+          orgId: 1,
+          panelId: 7,
+          var: {
+            varTelco: "kt-statistics-service",
+            varModule: "nginx",
+          },
+        },
+      },
+      {
+        id: 7,
+        title: "status code",
+        gridPos: {
+          w: 18,
+          h: 6,
+          x: 0,
+          y: 20,
+        },
+        info: {
+          dashId: "IfnAU1jWz",
+          dashName: "telco-stat",
+          orgId: 1,
+          panelId: 2,
+          var: {
+            varTelco: "kt-statistics-service",
+            varModule: "nginx",
+          },
+        },
+      },
+      {
+        id: 9,
+        title: "request hit ratio",
+        gridPos: {
+          w: 6,
+          h: 6,
+          x: 18,
+          y: 26,
+        },
+        info: {
+          dashId: "IfnAU1jWz",
+          dashName: "telco-stat",
+          orgId: 1,
+          panelId: 5,
+          var: {
+            varTelco: "kt-statistics-service",
+            varModule: "nginx",
+          },
+        },
+      },
+      {
+        id: 10,
+        title: "request hit ratio",
+        gridPos: {
+          w: 18,
+          h: 6,
+          x: 0,
+          y: 26,
+        },
+        info: {
+          dashId: "IfnAU1jWz",
+          dashName: "telco-stat",
+          orgId: 1,
+          panelId: 3,
+          var: {
+            varTelco: "kt-statistics-service",
+            varModule: "nginx",
+          },
+        },
+      },
+      {
+        id: 11,
+        title: "request hit ratio",
+        gridPos: {
+          w: 6,
+          h: 6,
+          x: 18,
+          y: 20,
+        },
+        info: {
+          dashId: "IfnAU1jWz",
+          dashName: "telco-stat",
+          orgId: 1,
+          panelId: 4,
+          var: {
+            varTelco: "kt-statistics-service",
+            varModule: "nginx",
+          },
+        },
+      },
+      {
+        id: 12,
+        title: "request hit ratio",
+        gridPos: {
+          w: 4,
+          h: 3,
+          x: 4,
+          y: 10,
+        },
+        info: {
+          dashId: "IfnAU1jWz",
+          dashName: "telco-stat",
+          orgId: 1,
+          panelId: 10,
+          var: {
+            varTelco: "kt-statistics-service",
+            varModule: "nginx",
+          },
+        },
+      }
     ],
   },
   {
